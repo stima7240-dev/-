@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\aes\aes.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\aes\aes_c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\aes\aes128_ni.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\aes\aes256_ni.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\sha2\sha2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\sha2\sha2_c.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\sha3\xkcp_sha3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\sha3\xkcp_sha3x4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\pqclean_shims\fips202.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\pqclean_shims\fips202x4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\rand\rand.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{072A3ACB-1946-3F5E-9384-0A3198F3AC37}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,13 @@
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\kem_hqc_128.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\Release\kem_hqc_128.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-128_clean\code.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\Release\code.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-128_clean\fft.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\Release\fft.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-128_clean\gf.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\Release\gf.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-128_clean\gf2x.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\Release\gf2x.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-128_clean\hqc.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\Release\hqc.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-128_clean\kem.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\Release\kem.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-128_clean\parsing.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\Release\parsing.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-128_clean\reed_muller.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\Release\reed_muller.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-128_clean\reed_solomon.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\Release\reed_solomon.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-128_clean\shake_ds.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\Release\shake_ds.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-128_clean\shake_prng.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\Release\shake_prng.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-128_clean\vector.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\Release\vector.obj

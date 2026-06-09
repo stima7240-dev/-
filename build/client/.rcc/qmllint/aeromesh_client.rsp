@@ -1,0 +1,16 @@
+--bare
+-I
+C:/mcp-test/aeromesh/build/client
+-I
+C:/mcp-test/aeromesh/build/client/AeroMesh
+-I
+C:/mcp-test/aeromesh/build/client
+-I
+C:/Qt/6.11.1/msvc2022_64/qml
+--resource
+C:/mcp-test/aeromesh/build/client/.qt/rcc/qmake_AeroMesh.qrc
+--resource
+C:/mcp-test/aeromesh/build/client/.qt/rcc/aeromesh_client_raw_qml_0.qrc
+C:/mcp-test/aeromesh/client/Main.qml
+C:/mcp-test/aeromesh/client/ChatListItem.qml
+C:/mcp-test/aeromesh/client/MessageBubble.qml

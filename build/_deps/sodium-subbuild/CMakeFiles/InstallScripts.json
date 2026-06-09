@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

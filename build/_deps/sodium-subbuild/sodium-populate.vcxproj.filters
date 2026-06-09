@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\sodium-subbuild\CMakeFiles\856f46881c922d4f44361fa43c271d34\sodium-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\sodium-subbuild\CMakeFiles\856f46881c922d4f44361fa43c271d34\sodium-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\sodium-subbuild\CMakeFiles\856f46881c922d4f44361fa43c271d34\sodium-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\sodium-subbuild\CMakeFiles\856f46881c922d4f44361fa43c271d34\sodium-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\sodium-subbuild\CMakeFiles\856f46881c922d4f44361fa43c271d34\sodium-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\sodium-subbuild\CMakeFiles\856f46881c922d4f44361fa43c271d34\sodium-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\sodium-subbuild\CMakeFiles\856f46881c922d4f44361fa43c271d34\sodium-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\sodium-subbuild\CMakeFiles\856f46881c922d4f44361fa43c271d34\sodium-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\sodium-subbuild\CMakeFiles\971666a8b70116fc1e73009149d8d30d\sodium-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\sodium-subbuild\CMakeFiles\e4f1e0df599ccea22df5a72be9a654dc\sodium-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\sodium-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\mcp-test\aeromesh\build\_deps\sodium-subbuild\CMakeFiles\sodium-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{D5CC3CEA-9918-3128-B66B-AC3D4ACD47EE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,3 @@
+[C:<SLASH>mcp-test<SLASH>aeromesh<SLASH>client]
+importPaths="C:/mcp-test/aeromesh/build/client;C:/mcp-test/aeromesh/build/client/AeroMesh;C:/mcp-test/aeromesh/build"
+resourceFiles="C:/mcp-test/aeromesh/build/client/.qt/rcc/qmake_AeroMesh.qrc;C:/mcp-test/aeromesh/build/client/.qt/rcc/aeromesh_client_raw_qml_0.qrc"

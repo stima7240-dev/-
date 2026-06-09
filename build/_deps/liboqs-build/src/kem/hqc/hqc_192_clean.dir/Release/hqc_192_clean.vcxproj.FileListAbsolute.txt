@@ -1,0 +1,1 @@
+C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_192_clean.dir\Release\hqc_192_clean.lib

@@ -1,0 +1,7 @@
+--resource
+C:/mcp-test/aeromesh/build/client/.qt/rcc/qmake_AeroMesh.qrc
+--resource
+C:/mcp-test/aeromesh/build/client/.qt/rcc/aeromesh_client_raw_qml_0.qrc
+/qt/qml/AeroMesh/Main.qml
+/qt/qml/AeroMesh/ChatListItem.qml
+/qt/qml/AeroMesh/MessageBubble.qml

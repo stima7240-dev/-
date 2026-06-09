@@ -1,0 +1,12 @@
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\aes\aes.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\Release\aes.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\aes\aes_c.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\Release\aes_c.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\aes\aes128_ni.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\Release\aes128_ni.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\aes\aes256_ni.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\Release\aes256_ni.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\sha2\sha2.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\Release\sha2.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\sha2\sha2_c.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\Release\sha2_c.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\sha3\xkcp_sha3.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\Release\xkcp_sha3.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\sha3\xkcp_sha3x4.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\Release\xkcp_sha3x4.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\common.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\Release\common.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\pqclean_shims\fips202.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\Release\fips202.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\pqclean_shims\fips202x4.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\Release\fips202x4.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\common\rand\rand.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\Release\rand.obj

@@ -1,0 +1,3 @@
+C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/sodium-populate.dir
+C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/ALL_BUILD.dir
+C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/ZERO_CHECK.dir

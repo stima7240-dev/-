@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\CMakeFiles\472e4949aa123666d9c3e1a3dbf56788\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{C494B877-0017-385B-81DF-61045B72E99E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

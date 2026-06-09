@@ -1,0 +1,9 @@
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\ml_dsa\sig_ml_dsa_65_ipd.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\Release\sig_ml_dsa_65_ipd.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\ml_dsa\pqcrystals-dilithium-standard_ml-dsa-65-ipd_ref\ntt.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\Release\ntt.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\ml_dsa\pqcrystals-dilithium-standard_ml-dsa-65-ipd_ref\packing.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\Release\packing.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\ml_dsa\pqcrystals-dilithium-standard_ml-dsa-65-ipd_ref\poly.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\Release\poly.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\ml_dsa\pqcrystals-dilithium-standard_ml-dsa-65-ipd_ref\polyvec.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\Release\polyvec.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\ml_dsa\pqcrystals-dilithium-standard_ml-dsa-65-ipd_ref\reduce.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\Release\reduce.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\ml_dsa\pqcrystals-dilithium-standard_ml-dsa-65-ipd_ref\rounding.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\Release\rounding.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\ml_dsa\pqcrystals-dilithium-standard_ml-dsa-65-ipd_ref\sign.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\Release\sign.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\ml_dsa\pqcrystals-dilithium-standard_ml-dsa-65-ipd_ref\symmetric-shake.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\Release\symmetric-shake.obj

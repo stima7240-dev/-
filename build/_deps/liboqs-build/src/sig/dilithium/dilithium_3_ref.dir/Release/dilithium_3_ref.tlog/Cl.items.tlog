@@ -1,0 +1,9 @@
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\dilithium\sig_dilithium_3.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\Release\sig_dilithium_3.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\dilithium\pqcrystals-dilithium_dilithium3_ref\ntt.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\Release\ntt.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\dilithium\pqcrystals-dilithium_dilithium3_ref\packing.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\Release\packing.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\dilithium\pqcrystals-dilithium_dilithium3_ref\poly.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\Release\poly.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\dilithium\pqcrystals-dilithium_dilithium3_ref\polyvec.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\Release\polyvec.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\dilithium\pqcrystals-dilithium_dilithium3_ref\reduce.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\Release\reduce.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\dilithium\pqcrystals-dilithium_dilithium3_ref\rounding.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\Release\rounding.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\dilithium\pqcrystals-dilithium_dilithium3_ref\sign.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\Release\sign.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\dilithium\pqcrystals-dilithium_dilithium3_ref\symmetric-shake.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\Release\symmetric-shake.obj

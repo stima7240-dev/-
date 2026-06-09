@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/sodium-populate"
+		},
+		{
+			"file" : "C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/e4f1e0df599ccea22df5a72be9a654dc/sodium-populate.rule"
+		},
+		{
+			"file" : "C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/971666a8b70116fc1e73009149d8d30d/sodium-populate-complete.rule"
+		},
+		{
+			"file" : "C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/856f46881c922d4f44361fa43c271d34/sodium-populate-build.rule"
+		},
+		{
+			"file" : "C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/856f46881c922d4f44361fa43c271d34/sodium-populate-configure.rule"
+		},
+		{
+			"file" : "C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/856f46881c922d4f44361fa43c271d34/sodium-populate-download.rule"
+		},
+		{
+			"file" : "C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/856f46881c922d4f44361fa43c271d34/sodium-populate-install.rule"
+		},
+		{
+			"file" : "C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/856f46881c922d4f44361fa43c271d34/sodium-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/856f46881c922d4f44361fa43c271d34/sodium-populate-patch.rule"
+		},
+		{
+			"file" : "C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/856f46881c922d4f44361fa43c271d34/sodium-populate-test.rule"
+		},
+		{
+			"file" : "C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/856f46881c922d4f44361fa43c271d34/sodium-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"sodium-populate"
+		],
+		"name" : "sodium-populate"
+	}
+}

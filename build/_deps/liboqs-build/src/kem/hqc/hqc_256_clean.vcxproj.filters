@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\kem_hqc_256.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-256_clean\code.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-256_clean\fft.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-256_clean\gf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-256_clean\gf2x.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-256_clean\hqc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-256_clean\kem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-256_clean\parsing.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-256_clean\reed_muller.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-256_clean\reed_solomon.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-256_clean\shake_ds.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-256_clean\shake_prng.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\pqclean_hqc-256_clean\vector.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\hqc\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{072A3ACB-1946-3F5E-9384-0A3198F3AC37}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

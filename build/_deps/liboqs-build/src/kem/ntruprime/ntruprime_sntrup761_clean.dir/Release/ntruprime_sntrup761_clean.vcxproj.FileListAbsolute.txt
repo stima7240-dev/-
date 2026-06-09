@@ -1,0 +1,1 @@
+C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\Release\ntruprime_sntrup761_clean.lib

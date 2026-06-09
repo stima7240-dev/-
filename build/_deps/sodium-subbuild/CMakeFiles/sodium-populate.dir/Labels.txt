@@ -1,0 +1,14 @@
+# Target labels
+ sodium-populate
+# Source files and their labels
+C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/sodium-populate
+C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/e4f1e0df599ccea22df5a72be9a654dc/sodium-populate.rule
+C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/971666a8b70116fc1e73009149d8d30d/sodium-populate-complete.rule
+C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/856f46881c922d4f44361fa43c271d34/sodium-populate-build.rule
+C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/856f46881c922d4f44361fa43c271d34/sodium-populate-configure.rule
+C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/856f46881c922d4f44361fa43c271d34/sodium-populate-download.rule
+C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/856f46881c922d4f44361fa43c271d34/sodium-populate-install.rule
+C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/856f46881c922d4f44361fa43c271d34/sodium-populate-mkdir.rule
+C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/856f46881c922d4f44361fa43c271d34/sodium-populate-patch.rule
+C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/856f46881c922d4f44361fa43c271d34/sodium-populate-test.rule
+C:/mcp-test/aeromesh/build/_deps/sodium-subbuild/CMakeFiles/856f46881c922d4f44361fa43c271d34/sodium-populate-update.rule

@@ -1,0 +1,1269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7E7B13F1-FB68-3937-B30B-1BDFD1C92412}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>oqs</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\mcp-test\aeromesh\build\_deps\liboqs-build\lib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">oqs.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">oqs</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\mcp-test\aeromesh\build\_deps\liboqs-build\lib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">oqs.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">oqs</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\mcp-test\aeromesh\build\_deps\liboqs-build\lib\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">oqs.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">oqs</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\mcp-test\aeromesh\build\_deps\liboqs-build\lib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">oqs.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">oqs</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\mcp-test\aeromesh\build\_deps\liboqs-build\include;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4146</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\mcp-test\aeromesh\build\_deps\liboqs-build\include;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\mcp-test\aeromesh\build\_deps\liboqs-build\include;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\mcp-test\aeromesh\build\_deps\liboqs-build\include;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ConformanceMode>true</ConformanceMode>
+      <DisableSpecificWarnings>4146</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\mcp-test\aeromesh\build\_deps\liboqs-build\include;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\mcp-test\aeromesh\build\_deps\liboqs-build\include;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\mcp-test\aeromesh\build\_deps\liboqs-build\include;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ConformanceMode>true</ConformanceMode>
+      <DisableSpecificWarnings>4146</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\mcp-test\aeromesh\build\_deps\liboqs-build\include;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\mcp-test\aeromesh\build\_deps\liboqs-build\include;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\mcp-test\aeromesh\build\_deps\liboqs-build\include;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4146</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\mcp-test\aeromesh\build\_deps\liboqs-build\include;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\mcp-test\aeromesh\build\_deps\liboqs-build\include;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/mcp-test/aeromesh/build/_deps/liboqs-src/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/mcp-test/aeromesh -BC:/mcp-test/aeromesh/build --check-stamp-file C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-4.3\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-4.3\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\WriteBasicConfigVersionFile.cmake;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\Config.cmake.in;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\liboqs.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/mcp-test/aeromesh/build/_deps/liboqs-src/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/mcp-test/aeromesh -BC:/mcp-test/aeromesh/build --check-stamp-file C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-4.3\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-4.3\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\WriteBasicConfigVersionFile.cmake;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\Config.cmake.in;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\liboqs.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/mcp-test/aeromesh/build/_deps/liboqs-src/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/mcp-test/aeromesh -BC:/mcp-test/aeromesh/build --check-stamp-file C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-4.3\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-4.3\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\WriteBasicConfigVersionFile.cmake;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\Config.cmake.in;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\liboqs.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/mcp-test/aeromesh/build/_deps/liboqs-src/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/mcp-test/aeromesh -BC:/mcp-test/aeromesh/build --check-stamp-file C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-4.3\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-4.3\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-4.3\Modules\WriteBasicConfigVersionFile.cmake;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\Config.cmake.in;C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\liboqs.pc.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\kem\kem.c" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem.dir\$(Configuration)\kem_frodokem640aes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem.dir\$(Configuration)\frodo640aes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem.dir\$(Configuration)\kem_frodokem640shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem.dir\$(Configuration)\frodo640shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem.dir\$(Configuration)\kem_frodokem976aes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem.dir\$(Configuration)\frodo976aes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem.dir\$(Configuration)\kem_frodokem976shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem.dir\$(Configuration)\frodo976shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem.dir\$(Configuration)\kem_frodokem1344aes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem.dir\$(Configuration)\frodo1344aes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem.dir\$(Configuration)\kem_frodokem1344shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem.dir\$(Configuration)\frodo1344shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem_avx2.dir\$(Configuration)\frodo640aes_avx2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem_avx2.dir\$(Configuration)\frodo976aes_avx2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem_avx2.dir\$(Configuration)\frodo1344aes_avx2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem_avx2.dir\$(Configuration)\frodo640shake_avx2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem_avx2.dir\$(Configuration)\frodo976shake_avx2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem_avx2.dir\$(Configuration)\frodo1344shake_avx2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\kem_ntruprime_sntrup761.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_core_inv3sntrup761.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_core_invsntrup761.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_core_mult3sntrup761.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_core_multsntrup761.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_core_scale3sntrup761.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_core_weightsntrup761.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_core_wforcesntrup761.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_decode_761x1531.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_decode_761x3.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_decode_761x4591.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_decode_761xint16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_decode_761xint32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_encode_761x1531.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_encode_761x1531round.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_encode_761x3.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_encode_761x4591.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_encode_761xfreeze3.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_encode_761xint16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_encode_int16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_sort_int32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_sort_uint32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\crypto_verify_1039.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.dir\$(Configuration)\kem.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\kem_classic_mceliece_348864.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\aes256ctr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\benes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\bm.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\controlbits.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\crypto_int16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\crypto_int32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\crypto_uint16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\crypto_uint32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\crypto_uint64.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\decrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\encrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\gf.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\operations.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\pk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\root.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\sk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\synd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\transpose.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.dir\$(Configuration)\util.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\kem_classic_mceliece_348864f.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\aes256ctr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\benes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\bm.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\controlbits.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\crypto_int16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\crypto_int32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\crypto_uint16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\crypto_uint32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\crypto_uint64.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\decrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\encrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\gf.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\operations.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\pk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\root.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\sk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\synd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\transpose.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.dir\$(Configuration)\util.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\kem_classic_mceliece_460896.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\aes256ctr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\benes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\bm.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\controlbits.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\crypto_int16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\crypto_int32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\crypto_uint16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\crypto_uint32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\crypto_uint64.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\decrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\encrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\gf.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\operations.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\pk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\root.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\sk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\synd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\transpose.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.dir\$(Configuration)\util.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\kem_classic_mceliece_460896f.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\aes256ctr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\benes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\bm.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\controlbits.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\crypto_int16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\crypto_int32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\crypto_uint16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\crypto_uint32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\crypto_uint64.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\decrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\encrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\gf.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\operations.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\pk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\root.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\sk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\synd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\transpose.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.dir\$(Configuration)\util.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\kem_classic_mceliece_6688128.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\aes256ctr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\benes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\bm.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\controlbits.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\crypto_int16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\crypto_int32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\crypto_uint16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\crypto_uint32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\crypto_uint64.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\decrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\encrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\gf.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\operations.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\pk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\root.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\sk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\synd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\transpose.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.dir\$(Configuration)\util.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\kem_classic_mceliece_6688128f.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\aes256ctr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\benes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\bm.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\controlbits.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\crypto_int16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\crypto_int32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\crypto_uint16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\crypto_uint32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\crypto_uint64.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\decrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\encrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\gf.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\operations.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\pk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\root.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\sk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\synd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\transpose.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.dir\$(Configuration)\util.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\kem_classic_mceliece_6960119.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\aes256ctr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\benes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\bm.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\controlbits.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\crypto_int16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\crypto_int32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\crypto_uint16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\crypto_uint32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\crypto_uint64.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\decrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\encrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\gf.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\operations.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\pk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\root.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\sk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\synd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\transpose.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.dir\$(Configuration)\util.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\kem_classic_mceliece_6960119f.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\aes256ctr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\benes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\bm.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\controlbits.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\crypto_int16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\crypto_int32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\crypto_uint16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\crypto_uint32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\crypto_uint64.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\decrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\encrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\gf.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\operations.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\pk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\root.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\sk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\synd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\transpose.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.dir\$(Configuration)\util.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\kem_classic_mceliece_8192128.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\aes256ctr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\benes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\bm.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\controlbits.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\crypto_int16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\crypto_int32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\crypto_uint16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\crypto_uint32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\crypto_uint64.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\decrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\encrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\gf.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\operations.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\pk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\root.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\sk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\synd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\transpose.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.dir\$(Configuration)\util.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\kem_classic_mceliece_8192128f.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\aes256ctr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\benes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\bm.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\controlbits.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\crypto_int16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\crypto_int32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\crypto_uint16.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\crypto_uint32.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\crypto_uint64.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\decrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\encrypt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\gf.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\operations.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\pk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\root.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\sk_gen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\synd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\transpose.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.dir\$(Configuration)\util.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\$(Configuration)\kem_hqc_128.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\$(Configuration)\code.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\$(Configuration)\fft.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\$(Configuration)\gf.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\$(Configuration)\gf2x.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\$(Configuration)\hqc.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\$(Configuration)\kem.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\$(Configuration)\parsing.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\$(Configuration)\reed_muller.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\$(Configuration)\reed_solomon.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\$(Configuration)\shake_ds.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\$(Configuration)\shake_prng.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.dir\$(Configuration)\vector.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_192_clean.dir\$(Configuration)\kem_hqc_192.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_192_clean.dir\$(Configuration)\code.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_192_clean.dir\$(Configuration)\fft.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_192_clean.dir\$(Configuration)\gf.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_192_clean.dir\$(Configuration)\gf2x.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_192_clean.dir\$(Configuration)\hqc.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_192_clean.dir\$(Configuration)\kem.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_192_clean.dir\$(Configuration)\parsing.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_192_clean.dir\$(Configuration)\reed_muller.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_192_clean.dir\$(Configuration)\reed_solomon.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_192_clean.dir\$(Configuration)\shake_ds.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_192_clean.dir\$(Configuration)\shake_prng.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_192_clean.dir\$(Configuration)\vector.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_256_clean.dir\$(Configuration)\kem_hqc_256.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_256_clean.dir\$(Configuration)\code.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_256_clean.dir\$(Configuration)\fft.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_256_clean.dir\$(Configuration)\gf.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_256_clean.dir\$(Configuration)\gf2x.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_256_clean.dir\$(Configuration)\hqc.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_256_clean.dir\$(Configuration)\kem.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_256_clean.dir\$(Configuration)\parsing.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_256_clean.dir\$(Configuration)\reed_muller.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_256_clean.dir\$(Configuration)\reed_solomon.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_256_clean.dir\$(Configuration)\shake_ds.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_256_clean.dir\$(Configuration)\shake_prng.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_256_clean.dir\$(Configuration)\vector.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_512_ref.dir\$(Configuration)\kem_kyber_512.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_512_ref.dir\$(Configuration)\cbd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_512_ref.dir\$(Configuration)\indcpa.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_512_ref.dir\$(Configuration)\kem.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_512_ref.dir\$(Configuration)\ntt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_512_ref.dir\$(Configuration)\poly.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_512_ref.dir\$(Configuration)\polyvec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_512_ref.dir\$(Configuration)\reduce.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_512_ref.dir\$(Configuration)\symmetric-shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_512_ref.dir\$(Configuration)\verify.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_768_ref.dir\$(Configuration)\kem_kyber_768.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_768_ref.dir\$(Configuration)\cbd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_768_ref.dir\$(Configuration)\indcpa.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_768_ref.dir\$(Configuration)\kem.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_768_ref.dir\$(Configuration)\ntt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_768_ref.dir\$(Configuration)\poly.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_768_ref.dir\$(Configuration)\polyvec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_768_ref.dir\$(Configuration)\reduce.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_768_ref.dir\$(Configuration)\symmetric-shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_768_ref.dir\$(Configuration)\verify.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_1024_ref.dir\$(Configuration)\kem_kyber_1024.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_1024_ref.dir\$(Configuration)\cbd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_1024_ref.dir\$(Configuration)\indcpa.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_1024_ref.dir\$(Configuration)\kem.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_1024_ref.dir\$(Configuration)\ntt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_1024_ref.dir\$(Configuration)\poly.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_1024_ref.dir\$(Configuration)\polyvec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_1024_ref.dir\$(Configuration)\reduce.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_1024_ref.dir\$(Configuration)\symmetric-shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_1024_ref.dir\$(Configuration)\verify.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_512_ipd_ref.dir\$(Configuration)\kem_ml_kem_512_ipd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_512_ipd_ref.dir\$(Configuration)\cbd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_512_ipd_ref.dir\$(Configuration)\indcpa.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_512_ipd_ref.dir\$(Configuration)\kem.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_512_ipd_ref.dir\$(Configuration)\ntt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_512_ipd_ref.dir\$(Configuration)\poly.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_512_ipd_ref.dir\$(Configuration)\polyvec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_512_ipd_ref.dir\$(Configuration)\reduce.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_512_ipd_ref.dir\$(Configuration)\symmetric-shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_512_ipd_ref.dir\$(Configuration)\verify.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_768_ipd_ref.dir\$(Configuration)\kem_ml_kem_768_ipd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_768_ipd_ref.dir\$(Configuration)\cbd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_768_ipd_ref.dir\$(Configuration)\indcpa.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_768_ipd_ref.dir\$(Configuration)\kem.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_768_ipd_ref.dir\$(Configuration)\ntt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_768_ipd_ref.dir\$(Configuration)\poly.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_768_ipd_ref.dir\$(Configuration)\polyvec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_768_ipd_ref.dir\$(Configuration)\reduce.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_768_ipd_ref.dir\$(Configuration)\symmetric-shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_768_ipd_ref.dir\$(Configuration)\verify.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_1024_ipd_ref.dir\$(Configuration)\kem_ml_kem_1024_ipd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_1024_ipd_ref.dir\$(Configuration)\cbd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_1024_ipd_ref.dir\$(Configuration)\indcpa.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_1024_ipd_ref.dir\$(Configuration)\kem.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_1024_ipd_ref.dir\$(Configuration)\ntt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_1024_ipd_ref.dir\$(Configuration)\poly.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_1024_ipd_ref.dir\$(Configuration)\polyvec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_1024_ipd_ref.dir\$(Configuration)\reduce.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_1024_ipd_ref.dir\$(Configuration)\symmetric-shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_1024_ipd_ref.dir\$(Configuration)\verify.obj" />
+    <ClCompile Include="C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\sig.c" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_2_ref.dir\$(Configuration)\sig_dilithium_2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_2_ref.dir\$(Configuration)\ntt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_2_ref.dir\$(Configuration)\packing.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_2_ref.dir\$(Configuration)\poly.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_2_ref.dir\$(Configuration)\polyvec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_2_ref.dir\$(Configuration)\reduce.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_2_ref.dir\$(Configuration)\rounding.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_2_ref.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_2_ref.dir\$(Configuration)\symmetric-shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\$(Configuration)\sig_dilithium_3.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\$(Configuration)\ntt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\$(Configuration)\packing.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\$(Configuration)\poly.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\$(Configuration)\polyvec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\$(Configuration)\reduce.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\$(Configuration)\rounding.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.dir\$(Configuration)\symmetric-shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_5_ref.dir\$(Configuration)\sig_dilithium_5.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_5_ref.dir\$(Configuration)\ntt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_5_ref.dir\$(Configuration)\packing.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_5_ref.dir\$(Configuration)\poly.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_5_ref.dir\$(Configuration)\polyvec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_5_ref.dir\$(Configuration)\reduce.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_5_ref.dir\$(Configuration)\rounding.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_5_ref.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_5_ref.dir\$(Configuration)\symmetric-shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_44_ipd_ref.dir\$(Configuration)\sig_ml_dsa_44_ipd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_44_ipd_ref.dir\$(Configuration)\ntt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_44_ipd_ref.dir\$(Configuration)\packing.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_44_ipd_ref.dir\$(Configuration)\poly.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_44_ipd_ref.dir\$(Configuration)\polyvec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_44_ipd_ref.dir\$(Configuration)\reduce.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_44_ipd_ref.dir\$(Configuration)\rounding.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_44_ipd_ref.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_44_ipd_ref.dir\$(Configuration)\symmetric-shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\$(Configuration)\sig_ml_dsa_65_ipd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\$(Configuration)\ntt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\$(Configuration)\packing.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\$(Configuration)\poly.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\$(Configuration)\polyvec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\$(Configuration)\reduce.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\$(Configuration)\rounding.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.dir\$(Configuration)\symmetric-shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_87_ipd_ref.dir\$(Configuration)\sig_ml_dsa_87_ipd.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_87_ipd_ref.dir\$(Configuration)\ntt.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_87_ipd_ref.dir\$(Configuration)\packing.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_87_ipd_ref.dir\$(Configuration)\poly.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_87_ipd_ref.dir\$(Configuration)\polyvec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_87_ipd_ref.dir\$(Configuration)\reduce.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_87_ipd_ref.dir\$(Configuration)\rounding.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_87_ipd_ref.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_87_ipd_ref.dir\$(Configuration)\symmetric-shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_clean.dir\$(Configuration)\sig_falcon_512.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_clean.dir\$(Configuration)\codec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_clean.dir\$(Configuration)\common.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_clean.dir\$(Configuration)\fft.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_clean.dir\$(Configuration)\fpr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_clean.dir\$(Configuration)\keygen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_clean.dir\$(Configuration)\pqclean.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_clean.dir\$(Configuration)\rng.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_clean.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_clean.dir\$(Configuration)\vrfy.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\$(Configuration)\codec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\$(Configuration)\common.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\$(Configuration)\fft.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\$(Configuration)\fpr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\$(Configuration)\keygen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\$(Configuration)\pqclean.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\$(Configuration)\rng.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\$(Configuration)\vrfy.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_clean.dir\$(Configuration)\sig_falcon_1024.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_clean.dir\$(Configuration)\codec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_clean.dir\$(Configuration)\common.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_clean.dir\$(Configuration)\fft.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_clean.dir\$(Configuration)\fpr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_clean.dir\$(Configuration)\keygen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_clean.dir\$(Configuration)\pqclean.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_clean.dir\$(Configuration)\rng.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_clean.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_clean.dir\$(Configuration)\vrfy.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_avx2.dir\$(Configuration)\codec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_avx2.dir\$(Configuration)\common.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_avx2.dir\$(Configuration)\fft.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_avx2.dir\$(Configuration)\fpr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_avx2.dir\$(Configuration)\keygen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_avx2.dir\$(Configuration)\pqclean.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_avx2.dir\$(Configuration)\rng.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_avx2.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_avx2.dir\$(Configuration)\vrfy.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_clean.dir\$(Configuration)\sig_falcon_padded_512.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_clean.dir\$(Configuration)\codec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_clean.dir\$(Configuration)\common.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_clean.dir\$(Configuration)\fft.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_clean.dir\$(Configuration)\fpr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_clean.dir\$(Configuration)\keygen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_clean.dir\$(Configuration)\pqclean.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_clean.dir\$(Configuration)\rng.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_clean.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_clean.dir\$(Configuration)\vrfy.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_avx2.dir\$(Configuration)\codec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_avx2.dir\$(Configuration)\common.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_avx2.dir\$(Configuration)\fft.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_avx2.dir\$(Configuration)\fpr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_avx2.dir\$(Configuration)\keygen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_avx2.dir\$(Configuration)\pqclean.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_avx2.dir\$(Configuration)\rng.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_avx2.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_avx2.dir\$(Configuration)\vrfy.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_clean.dir\$(Configuration)\sig_falcon_padded_1024.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_clean.dir\$(Configuration)\codec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_clean.dir\$(Configuration)\common.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_clean.dir\$(Configuration)\fft.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_clean.dir\$(Configuration)\fpr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_clean.dir\$(Configuration)\keygen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_clean.dir\$(Configuration)\pqclean.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_clean.dir\$(Configuration)\rng.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_clean.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_clean.dir\$(Configuration)\vrfy.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_avx2.dir\$(Configuration)\codec.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_avx2.dir\$(Configuration)\common.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_avx2.dir\$(Configuration)\fft.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_avx2.dir\$(Configuration)\fpr.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_avx2.dir\$(Configuration)\keygen.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_avx2.dir\$(Configuration)\pqclean.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_avx2.dir\$(Configuration)\rng.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_avx2.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_avx2.dir\$(Configuration)\vrfy.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128f_simple_clean.dir\$(Configuration)\sig_sphincs_sha2_128f_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128f_simple_clean.dir\$(Configuration)\address.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128f_simple_clean.dir\$(Configuration)\context_sha2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128f_simple_clean.dir\$(Configuration)\fors.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128f_simple_clean.dir\$(Configuration)\hash_sha2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128f_simple_clean.dir\$(Configuration)\merkle.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128f_simple_clean.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128f_simple_clean.dir\$(Configuration)\thash_sha2_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128f_simple_clean.dir\$(Configuration)\utils.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128f_simple_clean.dir\$(Configuration)\utilsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128f_simple_clean.dir\$(Configuration)\wots.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128f_simple_clean.dir\$(Configuration)\wotsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128s_simple_clean.dir\$(Configuration)\sig_sphincs_sha2_128s_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128s_simple_clean.dir\$(Configuration)\address.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128s_simple_clean.dir\$(Configuration)\context_sha2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128s_simple_clean.dir\$(Configuration)\fors.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128s_simple_clean.dir\$(Configuration)\hash_sha2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128s_simple_clean.dir\$(Configuration)\merkle.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128s_simple_clean.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128s_simple_clean.dir\$(Configuration)\thash_sha2_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128s_simple_clean.dir\$(Configuration)\utils.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128s_simple_clean.dir\$(Configuration)\utilsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128s_simple_clean.dir\$(Configuration)\wots.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128s_simple_clean.dir\$(Configuration)\wotsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192f_simple_clean.dir\$(Configuration)\sig_sphincs_sha2_192f_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192f_simple_clean.dir\$(Configuration)\address.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192f_simple_clean.dir\$(Configuration)\context_sha2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192f_simple_clean.dir\$(Configuration)\fors.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192f_simple_clean.dir\$(Configuration)\hash_sha2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192f_simple_clean.dir\$(Configuration)\merkle.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192f_simple_clean.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192f_simple_clean.dir\$(Configuration)\thash_sha2_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192f_simple_clean.dir\$(Configuration)\utils.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192f_simple_clean.dir\$(Configuration)\utilsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192f_simple_clean.dir\$(Configuration)\wots.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192f_simple_clean.dir\$(Configuration)\wotsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192s_simple_clean.dir\$(Configuration)\sig_sphincs_sha2_192s_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192s_simple_clean.dir\$(Configuration)\address.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192s_simple_clean.dir\$(Configuration)\context_sha2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192s_simple_clean.dir\$(Configuration)\fors.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192s_simple_clean.dir\$(Configuration)\hash_sha2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192s_simple_clean.dir\$(Configuration)\merkle.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192s_simple_clean.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192s_simple_clean.dir\$(Configuration)\thash_sha2_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192s_simple_clean.dir\$(Configuration)\utils.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192s_simple_clean.dir\$(Configuration)\utilsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192s_simple_clean.dir\$(Configuration)\wots.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192s_simple_clean.dir\$(Configuration)\wotsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256f_simple_clean.dir\$(Configuration)\sig_sphincs_sha2_256f_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256f_simple_clean.dir\$(Configuration)\address.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256f_simple_clean.dir\$(Configuration)\context_sha2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256f_simple_clean.dir\$(Configuration)\fors.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256f_simple_clean.dir\$(Configuration)\hash_sha2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256f_simple_clean.dir\$(Configuration)\merkle.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256f_simple_clean.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256f_simple_clean.dir\$(Configuration)\thash_sha2_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256f_simple_clean.dir\$(Configuration)\utils.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256f_simple_clean.dir\$(Configuration)\utilsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256f_simple_clean.dir\$(Configuration)\wots.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256f_simple_clean.dir\$(Configuration)\wotsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256s_simple_clean.dir\$(Configuration)\sig_sphincs_sha2_256s_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256s_simple_clean.dir\$(Configuration)\address.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256s_simple_clean.dir\$(Configuration)\context_sha2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256s_simple_clean.dir\$(Configuration)\fors.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256s_simple_clean.dir\$(Configuration)\hash_sha2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256s_simple_clean.dir\$(Configuration)\merkle.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256s_simple_clean.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256s_simple_clean.dir\$(Configuration)\thash_sha2_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256s_simple_clean.dir\$(Configuration)\utils.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256s_simple_clean.dir\$(Configuration)\utilsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256s_simple_clean.dir\$(Configuration)\wots.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256s_simple_clean.dir\$(Configuration)\wotsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128f_simple_clean.dir\$(Configuration)\sig_sphincs_shake_128f_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128f_simple_clean.dir\$(Configuration)\address.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128f_simple_clean.dir\$(Configuration)\context_shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128f_simple_clean.dir\$(Configuration)\fors.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128f_simple_clean.dir\$(Configuration)\hash_shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128f_simple_clean.dir\$(Configuration)\merkle.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128f_simple_clean.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128f_simple_clean.dir\$(Configuration)\thash_shake_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128f_simple_clean.dir\$(Configuration)\utils.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128f_simple_clean.dir\$(Configuration)\utilsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128f_simple_clean.dir\$(Configuration)\wots.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128f_simple_clean.dir\$(Configuration)\wotsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128s_simple_clean.dir\$(Configuration)\sig_sphincs_shake_128s_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128s_simple_clean.dir\$(Configuration)\address.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128s_simple_clean.dir\$(Configuration)\context_shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128s_simple_clean.dir\$(Configuration)\fors.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128s_simple_clean.dir\$(Configuration)\hash_shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128s_simple_clean.dir\$(Configuration)\merkle.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128s_simple_clean.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128s_simple_clean.dir\$(Configuration)\thash_shake_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128s_simple_clean.dir\$(Configuration)\utils.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128s_simple_clean.dir\$(Configuration)\utilsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128s_simple_clean.dir\$(Configuration)\wots.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128s_simple_clean.dir\$(Configuration)\wotsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192f_simple_clean.dir\$(Configuration)\sig_sphincs_shake_192f_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192f_simple_clean.dir\$(Configuration)\address.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192f_simple_clean.dir\$(Configuration)\context_shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192f_simple_clean.dir\$(Configuration)\fors.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192f_simple_clean.dir\$(Configuration)\hash_shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192f_simple_clean.dir\$(Configuration)\merkle.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192f_simple_clean.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192f_simple_clean.dir\$(Configuration)\thash_shake_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192f_simple_clean.dir\$(Configuration)\utils.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192f_simple_clean.dir\$(Configuration)\utilsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192f_simple_clean.dir\$(Configuration)\wots.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192f_simple_clean.dir\$(Configuration)\wotsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192s_simple_clean.dir\$(Configuration)\sig_sphincs_shake_192s_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192s_simple_clean.dir\$(Configuration)\address.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192s_simple_clean.dir\$(Configuration)\context_shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192s_simple_clean.dir\$(Configuration)\fors.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192s_simple_clean.dir\$(Configuration)\hash_shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192s_simple_clean.dir\$(Configuration)\merkle.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192s_simple_clean.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192s_simple_clean.dir\$(Configuration)\thash_shake_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192s_simple_clean.dir\$(Configuration)\utils.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192s_simple_clean.dir\$(Configuration)\utilsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192s_simple_clean.dir\$(Configuration)\wots.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192s_simple_clean.dir\$(Configuration)\wotsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256f_simple_clean.dir\$(Configuration)\sig_sphincs_shake_256f_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256f_simple_clean.dir\$(Configuration)\address.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256f_simple_clean.dir\$(Configuration)\context_shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256f_simple_clean.dir\$(Configuration)\fors.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256f_simple_clean.dir\$(Configuration)\hash_shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256f_simple_clean.dir\$(Configuration)\merkle.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256f_simple_clean.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256f_simple_clean.dir\$(Configuration)\thash_shake_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256f_simple_clean.dir\$(Configuration)\utils.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256f_simple_clean.dir\$(Configuration)\utilsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256f_simple_clean.dir\$(Configuration)\wots.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256f_simple_clean.dir\$(Configuration)\wotsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256s_simple_clean.dir\$(Configuration)\sig_sphincs_shake_256s_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256s_simple_clean.dir\$(Configuration)\address.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256s_simple_clean.dir\$(Configuration)\context_shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256s_simple_clean.dir\$(Configuration)\fors.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256s_simple_clean.dir\$(Configuration)\hash_shake.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256s_simple_clean.dir\$(Configuration)\merkle.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256s_simple_clean.dir\$(Configuration)\sign.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256s_simple_clean.dir\$(Configuration)\thash_shake_simple.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256s_simple_clean.dir\$(Configuration)\utils.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256s_simple_clean.dir\$(Configuration)\utilsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256s_simple_clean.dir\$(Configuration)\wots.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256s_simple_clean.dir\$(Configuration)\wotsx1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\sha3\xkcp_low\xkcp_low_keccakp_1600_plain64.dir\$(Configuration)\KeccakP-1600-opt64.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\sha3\xkcp_low\xkcp_low_keccakp_1600times4_serial.dir\$(Configuration)\KeccakP-1600-times4-on1.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\$(Configuration)\aes.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\$(Configuration)\aes_c.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\$(Configuration)\aes128_ni.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\$(Configuration)\aes256_ni.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\$(Configuration)\sha2.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\$(Configuration)\sha2_c.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\$(Configuration)\xkcp_sha3.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\$(Configuration)\xkcp_sha3x4.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\$(Configuration)\common.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\$(Configuration)\fips202.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\$(Configuration)\fips202x4.obj" />
+    <Object Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.dir\$(Configuration)\rand.obj" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\ZERO_CHECK.vcxproj">
+      <Project>{F1B71B95-EAA1-3327-91A7-DF9315C8DA2F}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.vcxproj">
+      <Project>{E22BCAD7-4A09-342D-A739-7A0E1DFBE630}</Project>
+      <Name>classic_mceliece_348864_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864f_clean.vcxproj">
+      <Project>{23A1EF10-7A57-348E-AA37-6A744E19BB8F}</Project>
+      <Name>classic_mceliece_348864f_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896_clean.vcxproj">
+      <Project>{AB75FFB6-81E0-3AF6-9E0E-1437A60B4865}</Project>
+      <Name>classic_mceliece_460896_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_460896f_clean.vcxproj">
+      <Project>{0A7FCD36-CDB6-3A9E-937D-C03E4BBD0BF4}</Project>
+      <Name>classic_mceliece_460896f_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128_clean.vcxproj">
+      <Project>{D23BB30C-C10C-3F9E-AC6E-2B73CDE1D790}</Project>
+      <Name>classic_mceliece_6688128_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6688128f_clean.vcxproj">
+      <Project>{3F7D696F-0CE3-34E8-AC5B-324AD8048571}</Project>
+      <Name>classic_mceliece_6688128f_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119_clean.vcxproj">
+      <Project>{5717AA61-A217-377D-9FFF-E89DC920C09F}</Project>
+      <Name>classic_mceliece_6960119_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_6960119f_clean.vcxproj">
+      <Project>{6D6D990B-8DFA-368E-A4A1-5B9EB2AD7159}</Project>
+      <Name>classic_mceliece_6960119f_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128_clean.vcxproj">
+      <Project>{EB920A2F-5255-35F1-912D-B4262BCFCE25}</Project>
+      <Name>classic_mceliece_8192128_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_8192128f_clean.vcxproj">
+      <Project>{4E186512-2B34-36E4-9B0E-C24FF92ABAC2}</Project>
+      <Name>classic_mceliece_8192128f_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\common.vcxproj">
+      <Project>{BFF0C0DE-95A0-3B4A-B0FF-582581803466}</Project>
+      <Name>common</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_2_ref.vcxproj">
+      <Project>{A756F682-8A83-3D6A-962B-0D439088E16D}</Project>
+      <Name>dilithium_2_ref</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_3_ref.vcxproj">
+      <Project>{0E60810E-0948-312E-AE54-E734C009048F}</Project>
+      <Name>dilithium_3_ref</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_5_ref.vcxproj">
+      <Project>{C0188694-8AB6-360F-9BDA-DCAE77901B96}</Project>
+      <Name>dilithium_5_ref</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_avx2.vcxproj">
+      <Project>{826D7116-D5BD-3B72-9F2D-B536007FE0EA}</Project>
+      <Name>falcon_1024_avx2</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_clean.vcxproj">
+      <Project>{88092CAA-28AE-3C93-A9FC-5F95AA0AEF34}</Project>
+      <Name>falcon_1024_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.vcxproj">
+      <Project>{023B0549-5107-3D32-9375-CC60462A644F}</Project>
+      <Name>falcon_512_avx2</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_clean.vcxproj">
+      <Project>{E4BE8CD2-8249-32E8-8989-B61526E52E83}</Project>
+      <Name>falcon_512_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_avx2.vcxproj">
+      <Project>{F6635F7E-6E62-3DB9-BD3F-48DBEA1A728B}</Project>
+      <Name>falcon_padded_1024_avx2</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_1024_clean.vcxproj">
+      <Project>{21A38EB4-AC31-3059-918F-6574EE35537F}</Project>
+      <Name>falcon_padded_1024_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_avx2.vcxproj">
+      <Project>{6A705B24-8928-32A7-8B9E-4DA3CC9D6950}</Project>
+      <Name>falcon_padded_512_avx2</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_padded_512_clean.vcxproj">
+      <Project>{FA95CD29-3CB2-3A92-8360-F242A40D5BB3}</Project>
+      <Name>falcon_padded_512_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem.vcxproj">
+      <Project>{8BCEB283-0B1E-375F-A65D-8A3039A61FAB}</Project>
+      <Name>frodokem</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\frodokem\frodokem_avx2.vcxproj">
+      <Project>{D34E9623-2DDD-30F5-BE86-5023B7879A46}</Project>
+      <Name>frodokem_avx2</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_128_clean.vcxproj">
+      <Project>{835A4348-6E66-34E6-9E15-C919FA6B33CC}</Project>
+      <Name>hqc_128_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_192_clean.vcxproj">
+      <Project>{752F9CBA-E731-3E8B-AF08-EAF24B653CB1}</Project>
+      <Name>hqc_192_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\hqc\hqc_256_clean.vcxproj">
+      <Project>{7F84F2B9-9817-32F6-97D2-E7FAF87E5ED3}</Project>
+      <Name>hqc_256_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_1024_ref.vcxproj">
+      <Project>{949D63AA-BF93-32C2-8C08-129D060D502C}</Project>
+      <Name>kyber_1024_ref</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_512_ref.vcxproj">
+      <Project>{703771A4-1C00-3733-BD6D-FADAD407484A}</Project>
+      <Name>kyber_512_ref</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_768_ref.vcxproj">
+      <Project>{9DD91125-A8C9-3F2E-8990-0F7DD35DA20D}</Project>
+      <Name>kyber_768_ref</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_44_ipd_ref.vcxproj">
+      <Project>{F5B15A44-A3ED-3570-8270-C25DB6850BFD}</Project>
+      <Name>ml_dsa_44_ipd_ref</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_65_ipd_ref.vcxproj">
+      <Project>{92CDB2FD-A3F5-3446-99F4-9D3D22656469}</Project>
+      <Name>ml_dsa_65_ipd_ref</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\ml_dsa\ml_dsa_87_ipd_ref.vcxproj">
+      <Project>{6396E783-B0F1-3CDC-B0DD-9E664A98978B}</Project>
+      <Name>ml_dsa_87_ipd_ref</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_1024_ipd_ref.vcxproj">
+      <Project>{A9ACBFA3-36B7-3797-8A11-1187C7175382}</Project>
+      <Name>ml_kem_1024_ipd_ref</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_512_ipd_ref.vcxproj">
+      <Project>{574F0E42-F27C-3CE0-BB2A-42294DBF8C50}</Project>
+      <Name>ml_kem_512_ipd_ref</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ml_kem\ml_kem_768_ipd_ref.vcxproj">
+      <Project>{A5D1B293-527E-3E03-B0A0-ECB51D877121}</Project>
+      <Name>ml_kem_768_ipd_ref</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\ntruprime\ntruprime_sntrup761_clean.vcxproj">
+      <Project>{99448EFB-69CB-3AB9-8BC5-35FAD2B0BF10}</Project>
+      <Name>ntruprime_sntrup761_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128f_simple_clean.vcxproj">
+      <Project>{DF393B1D-0AD3-362E-BAA5-46657A2B4B3D}</Project>
+      <Name>sphincs_sha2_128f_simple_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_128s_simple_clean.vcxproj">
+      <Project>{425B15C7-B056-33D5-BA87-6550DA3F4B2A}</Project>
+      <Name>sphincs_sha2_128s_simple_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192f_simple_clean.vcxproj">
+      <Project>{6F8FE264-DA97-3965-A13E-57A07B95C93B}</Project>
+      <Name>sphincs_sha2_192f_simple_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192s_simple_clean.vcxproj">
+      <Project>{32785B7D-7036-346D-BA51-B2548E75A84B}</Project>
+      <Name>sphincs_sha2_192s_simple_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256f_simple_clean.vcxproj">
+      <Project>{11521154-20EC-3838-A763-CF6F6F454518}</Project>
+      <Name>sphincs_sha2_256f_simple_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_256s_simple_clean.vcxproj">
+      <Project>{5A3014E7-C162-3D47-B77E-A641BD7C0918}</Project>
+      <Name>sphincs_sha2_256s_simple_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128f_simple_clean.vcxproj">
+      <Project>{D1C151AA-6CF4-37DF-B3B6-46F26D292629}</Project>
+      <Name>sphincs_shake_128f_simple_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_128s_simple_clean.vcxproj">
+      <Project>{0195D613-4FEC-366C-93AB-E98909057925}</Project>
+      <Name>sphincs_shake_128s_simple_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192f_simple_clean.vcxproj">
+      <Project>{306B647A-B255-3B9C-B817-D83102ADC028}</Project>
+      <Name>sphincs_shake_192f_simple_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_192s_simple_clean.vcxproj">
+      <Project>{8D59A4B1-6E35-310F-A9DE-872C7D486B4E}</Project>
+      <Name>sphincs_shake_192s_simple_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256f_simple_clean.vcxproj">
+      <Project>{27707252-44B5-3D95-8A7D-0CA240474B35}</Project>
+      <Name>sphincs_shake_256f_simple_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_shake_256s_simple_clean.vcxproj">
+      <Project>{13EF243D-111F-3B34-8E9E-DF6F66219040}</Project>
+      <Name>sphincs_shake_256s_simple_clean</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\sha3\xkcp_low\xkcp_low_keccakp_1600_plain64.vcxproj">
+      <Project>{4B746557-9AE5-3475-B89D-74FAB95DE413}</Project>
+      <Name>xkcp_low_keccakp_1600_plain64</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\sha3\xkcp_low\xkcp_low_keccakp_1600times4_serial.vcxproj">
+      <Project>{9B05AAD6-2F14-3E9A-BE40-3D787BE568AB}</Project>
+      <Name>xkcp_low_keccakp_1600times4_serial</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

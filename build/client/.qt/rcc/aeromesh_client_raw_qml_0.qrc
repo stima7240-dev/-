@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/qt/qml/AeroMesh/">
+    <file alias="Main.qml">C:/mcp-test/aeromesh/client/Main.qml</file>
+    <file alias="ChatListItem.qml">C:/mcp-test/aeromesh/client/ChatListItem.qml</file>
+    <file alias="MessageBubble.qml">C:/mcp-test/aeromesh/client/MessageBubble.qml</file>
+  </qresource>
+</RCC>
+

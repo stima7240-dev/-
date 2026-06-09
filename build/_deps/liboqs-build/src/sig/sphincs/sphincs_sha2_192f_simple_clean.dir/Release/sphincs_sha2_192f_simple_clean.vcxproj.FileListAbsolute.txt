@@ -1,0 +1,1 @@
+C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\sphincs\sphincs_sha2_192f_simple_clean.dir\Release\sphincs_sha2_192f_simple_clean.lib

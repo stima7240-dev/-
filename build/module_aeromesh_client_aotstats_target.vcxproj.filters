@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\CMakeFiles\90ebfadd1c20f787f938bccb7f16f3c2\module_aeromesh_client.aotstats.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\CMakeFiles\fdd4e40751dd0f655ae5d811383dbb1d\module_aeromesh_client_aotstats_target.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\mcp-test\aeromesh\build\CMakeFiles\module_aeromesh_client_aotstats_target" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{C494B877-0017-385B-81DF-61045B72E99E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

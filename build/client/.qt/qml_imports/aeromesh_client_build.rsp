@@ -1,0 +1,14 @@
+-rootPath
+C:/mcp-test/aeromesh/client
+-cmake-output
+-output-file
+C:/mcp-test/aeromesh/build/client/.qt/qml_imports/aeromesh_client_build.cmake
+-importPath
+C:/mcp-test/aeromesh/build/client
+-importPath
+C:/mcp-test/aeromesh/build/client/AeroMesh
+-importPath
+C:/Qt/6.11.1/msvc2022_64/qml
+-qrcFiles
+C:/mcp-test/aeromesh/build/client/.qt/rcc/qmake_AeroMesh.qrc
+C:/mcp-test/aeromesh/build/client/.qt/rcc/aeromesh_client_raw_qml_0.qrc

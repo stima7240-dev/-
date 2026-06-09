@@ -1,0 +1,17 @@
+core_tests 18 0.00117665
+dht_tests 17 0.00128955
+onion_tests 16 0.00139023
+cover_tests 15 0.00142115
+ratchet_tests 13 0.00177899
+pq_tests 12 0.00205891
+rs_tests 11 0.00192265
+file_tests 10 0.00205556
+ephemeral_tests 9 0.00232082
+transport_tests 8 0.00256874
+udp_tests 7 0.00316839
+session_tests 6 0.00414667
+stun_tests 5 0.00408338
+holepunch_tests 4 0.00510322
+relay_tests 3 0.00695237
+link_tests 2 0.0110881
+---

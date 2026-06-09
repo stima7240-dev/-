@@ -1,0 +1,14 @@
+# Target labels
+ liboqs-populate
+# Source files and their labels
+C:/mcp-test/aeromesh/build/_deps/liboqs-subbuild/CMakeFiles/liboqs-populate
+C:/mcp-test/aeromesh/build/_deps/liboqs-subbuild/CMakeFiles/7b6288100ed9bf485ae16770dc651ccb/liboqs-populate.rule
+C:/mcp-test/aeromesh/build/_deps/liboqs-subbuild/CMakeFiles/a28f576439c636fef1eadf9dc5512f88/liboqs-populate-complete.rule
+C:/mcp-test/aeromesh/build/_deps/liboqs-subbuild/CMakeFiles/4c718560df6ec0b6ac7bd6bc46a78bb9/liboqs-populate-build.rule
+C:/mcp-test/aeromesh/build/_deps/liboqs-subbuild/CMakeFiles/4c718560df6ec0b6ac7bd6bc46a78bb9/liboqs-populate-configure.rule
+C:/mcp-test/aeromesh/build/_deps/liboqs-subbuild/CMakeFiles/4c718560df6ec0b6ac7bd6bc46a78bb9/liboqs-populate-download.rule
+C:/mcp-test/aeromesh/build/_deps/liboqs-subbuild/CMakeFiles/4c718560df6ec0b6ac7bd6bc46a78bb9/liboqs-populate-install.rule
+C:/mcp-test/aeromesh/build/_deps/liboqs-subbuild/CMakeFiles/4c718560df6ec0b6ac7bd6bc46a78bb9/liboqs-populate-mkdir.rule
+C:/mcp-test/aeromesh/build/_deps/liboqs-subbuild/CMakeFiles/4c718560df6ec0b6ac7bd6bc46a78bb9/liboqs-populate-patch.rule
+C:/mcp-test/aeromesh/build/_deps/liboqs-subbuild/CMakeFiles/4c718560df6ec0b6ac7bd6bc46a78bb9/liboqs-populate-test.rule
+C:/mcp-test/aeromesh/build/_deps/liboqs-subbuild/CMakeFiles/4c718560df6ec0b6ac7bd6bc46a78bb9/liboqs-populate-update.rule

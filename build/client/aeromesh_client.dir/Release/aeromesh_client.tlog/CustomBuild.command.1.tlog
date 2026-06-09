@@ -1,0 +1,112 @@
+^C:\MCP-TEST\AEROMESH\BUILD\CMAKEFILES\68EA9E29DC3C68BC58052C79CAC1C27D\QT6AEROMESH_CLIENT_METATYPES.JSON.GEN.RULE
+setlocal
+C:\Qt\6.11.1\msvc2022_64\bin\moc.exe -o C:/mcp-test/aeromesh/build/client/meta_types/qt6aeromesh_client_metatypes.json.gen --collect-json @C:/mcp-test/aeromesh/build/client/meta_types/aeromesh_client_json_file_list.txt
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different C:/mcp-test/aeromesh/build/client/meta_types/qt6aeromesh_client_metatypes.json.gen C:/mcp-test/aeromesh/build/client/meta_types/qt6aeromesh_client_metatypes.json
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\MCP-TEST\AEROMESH\BUILD\CMAKEFILES\68EA9E29DC3C68BC58052C79CAC1C27D\QT6AEROMESH_CLIENT_METATYPES.JSON.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/mcp-test/aeromesh/build/client/meta_types/qt6aeromesh_client_metatypes.json
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\MCP-TEST\AEROMESH\BUILD\CMAKEFILES\34DD9DFC72DFFEDB53CDD60A1CA71989\AEROMESH_CLIENT_QMLTYPEREGISTRATIONS.CPP.RULE
+setlocal
+call ..\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.1/msvc2022_64/bin/qmltyperegistrar.exe --generate-qmltypes=C:/mcp-test/aeromesh/build/client/AeroMesh/aeromesh_client.qmltypes --import-name=AeroMesh --major-version=1 --minor-version=0 @C:/mcp-test/aeromesh/build/client/qmltypes/aeromesh_client_foreign_types.txt -o C:/mcp-test/aeromesh/build/client/aeromesh_client_qmltyperegistrations.cpp C:/mcp-test/aeromesh/build/client/meta_types/qt6aeromesh_client_metatypes.json
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/mcp-test/aeromesh/build/client/.qt/qmltypes
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/mcp-test/aeromesh/build/client/.qt/qmltypes/aeromesh_client.qmltypes
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\MCP-TEST\AEROMESH\BUILD\CMAKEFILES\7BEDFA5C7EFE77992B51453E223B90A8\QRC_QMAKE_AEROMESH.CPP.RULE
+setlocal
+C:\Qt\6.11.1\msvc2022_64\bin\rcc.exe --output C:/mcp-test/aeromesh/build/client/.qt/rcc/qrc_qmake_AeroMesh.cpp --name qmake_AeroMesh C:/mcp-test/aeromesh/build/client/.qt/rcc/qmake_AeroMesh.qrc --no-zstd
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\MCP-TEST\AEROMESH\BUILD\CMAKEFILES\90EBFADD1C20F787F938BCCB7F16F3C2\AEROMESH_CLIENT_QMLCACHE_LOADER.CPP.RULE
+setlocal
+call ..\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.1/msvc2022_64/bin/qmlcachegen.exe --resource-name qmlcache_aeromesh_client -o C:/mcp-test/aeromesh/build/client/.rcc/qmlcache/aeromesh_client_qmlcache_loader.cpp @C:/mcp-test/aeromesh/build/client/.rcc/qmlcache/aeromesh_client_qml_loader_file_list.rsp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\MCP-TEST\AEROMESH\BUILD\CMAKEFILES\90EBFADD1C20F787F938BCCB7F16F3C2\AEROMESH_CLIENT_MAIN_QML.CPP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/mcp-test/aeromesh/build/client/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.1/msvc2022_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/AeroMesh/Main.qml -I C:/mcp-test/aeromesh/build/client -I C:/Qt/6.11.1/msvc2022_64/qml -i C:/mcp-test/aeromesh/build/client/AeroMesh/qmldir --resource C:/mcp-test/aeromesh/build/client/.qt/rcc/qmake_AeroMesh.qrc --resource C:/mcp-test/aeromesh/build/client/.qt/rcc/aeromesh_client_raw_qml_0.qrc --dump-aot-stats --module-id=AeroMesh(aeromesh_client) -o C:/mcp-test/aeromesh/build/client/.rcc/qmlcache/aeromesh_client_Main_qml.cpp C:/mcp-test/aeromesh/client/Main.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\MCP-TEST\AEROMESH\BUILD\CMAKEFILES\90EBFADD1C20F787F938BCCB7F16F3C2\AEROMESH_CLIENT_CHATLISTITEM_QML.CPP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/mcp-test/aeromesh/build/client/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.1/msvc2022_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/AeroMesh/ChatListItem.qml -I C:/mcp-test/aeromesh/build/client -I C:/Qt/6.11.1/msvc2022_64/qml -i C:/mcp-test/aeromesh/build/client/AeroMesh/qmldir --resource C:/mcp-test/aeromesh/build/client/.qt/rcc/qmake_AeroMesh.qrc --resource C:/mcp-test/aeromesh/build/client/.qt/rcc/aeromesh_client_raw_qml_0.qrc --dump-aot-stats --module-id=AeroMesh(aeromesh_client) -o C:/mcp-test/aeromesh/build/client/.rcc/qmlcache/aeromesh_client_ChatListItem_qml.cpp C:/mcp-test/aeromesh/client/ChatListItem.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\MCP-TEST\AEROMESH\BUILD\CMAKEFILES\90EBFADD1C20F787F938BCCB7F16F3C2\AEROMESH_CLIENT_MESSAGEBUBBLE_QML.CPP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/mcp-test/aeromesh/build/client/.rcc/qmlcache
+if %errorlevel% neq 0 goto :cmEnd
+call ..\.qt\bin\qt_setup_tool_path.bat C:/Qt/6.11.1/msvc2022_64/bin/qmlcachegen.exe --bare --resource-path /qt/qml/AeroMesh/MessageBubble.qml -I C:/mcp-test/aeromesh/build/client -I C:/Qt/6.11.1/msvc2022_64/qml -i C:/mcp-test/aeromesh/build/client/AeroMesh/qmldir --resource C:/mcp-test/aeromesh/build/client/.qt/rcc/qmake_AeroMesh.qrc --resource C:/mcp-test/aeromesh/build/client/.qt/rcc/aeromesh_client_raw_qml_0.qrc --dump-aot-stats --module-id=AeroMesh(aeromesh_client) -o C:/mcp-test/aeromesh/build/client/.rcc/qmlcache/aeromesh_client_MessageBubble_qml.cpp C:/mcp-test/aeromesh/client/MessageBubble.qml
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\MCP-TEST\AEROMESH\BUILD\CMAKEFILES\7BEDFA5C7EFE77992B51453E223B90A8\QRC_AEROMESH_CLIENT_RAW_QML_0.CPP.RULE
+setlocal
+C:\Qt\6.11.1\msvc2022_64\bin\rcc.exe --output C:/mcp-test/aeromesh/build/client/.qt/rcc/qrc_aeromesh_client_raw_qml_0.cpp --name aeromesh_client_raw_qml_0 C:/mcp-test/aeromesh/build/client/.qt/rcc/aeromesh_client_raw_qml_0.qrc --no-zstd
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\MCP-TEST\AEROMESH\CLIENT\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/mcp-test/aeromesh -BC:/mcp-test/aeromesh/build --check-stamp-file C:/mcp-test/aeromesh/build/client/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

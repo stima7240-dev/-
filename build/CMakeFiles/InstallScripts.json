@@ -1,0 +1,27 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/mcp-test/aeromesh/build/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/core/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/_deps/sodium-build/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/common/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/common/sha3/xkcp_low/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/kem/frodokem/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/kem/ntruprime/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/kem/classic_mceliece/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/kem/hqc/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/kem/kyber/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/kem/ml_kem/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/sig/dilithium/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/sig/ml_dsa/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/sig/falcon/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/src/sig/sphincs/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/platform/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/client/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/core/tests/cmake_install.cmake",
+		"C:/mcp-test/aeromesh/build/platform/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

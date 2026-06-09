@@ -1,0 +1,9 @@
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\falcon\pqclean_falcon-512_avx2\codec.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\Release\codec.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\falcon\pqclean_falcon-512_avx2\common.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\Release\common.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\falcon\pqclean_falcon-512_avx2\fft.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\Release\fft.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\falcon\pqclean_falcon-512_avx2\fpr.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\Release\fpr.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\falcon\pqclean_falcon-512_avx2\keygen.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\Release\keygen.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\falcon\pqclean_falcon-512_avx2\pqclean.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\Release\pqclean.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\falcon\pqclean_falcon-512_avx2\rng.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\Release\rng.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\falcon\pqclean_falcon-512_avx2\sign.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\Release\sign.obj
+C:\mcp-test\aeromesh\build\_deps\liboqs-src\src\sig\falcon\pqclean_falcon-512_avx2\vrfy.c;C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_512_avx2.dir\Release\vrfy.obj

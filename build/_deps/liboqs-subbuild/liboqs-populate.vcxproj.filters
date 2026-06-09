@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\liboqs-subbuild\CMakeFiles\4c718560df6ec0b6ac7bd6bc46a78bb9\liboqs-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\liboqs-subbuild\CMakeFiles\4c718560df6ec0b6ac7bd6bc46a78bb9\liboqs-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\liboqs-subbuild\CMakeFiles\4c718560df6ec0b6ac7bd6bc46a78bb9\liboqs-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\liboqs-subbuild\CMakeFiles\4c718560df6ec0b6ac7bd6bc46a78bb9\liboqs-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\liboqs-subbuild\CMakeFiles\4c718560df6ec0b6ac7bd6bc46a78bb9\liboqs-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\liboqs-subbuild\CMakeFiles\4c718560df6ec0b6ac7bd6bc46a78bb9\liboqs-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\liboqs-subbuild\CMakeFiles\4c718560df6ec0b6ac7bd6bc46a78bb9\liboqs-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\liboqs-subbuild\CMakeFiles\4c718560df6ec0b6ac7bd6bc46a78bb9\liboqs-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\liboqs-subbuild\CMakeFiles\a28f576439c636fef1eadf9dc5512f88\liboqs-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\liboqs-subbuild\CMakeFiles\7b6288100ed9bf485ae16770dc651ccb\liboqs-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\mcp-test\aeromesh\build\_deps\liboqs-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\mcp-test\aeromesh\build\_deps\liboqs-subbuild\CMakeFiles\liboqs-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{9F09AC53-EEAE-3BEA-9AC4-F9BEEF532B20}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
