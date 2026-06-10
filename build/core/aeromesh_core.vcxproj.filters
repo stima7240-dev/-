@@ -7,6 +7,9 @@
     <ClCompile Include="C:\mcp-test\aeromesh\core\src\identity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\mcp-test\aeromesh\core\src\account_vault.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\mcp-test\aeromesh\core\src\node_id.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

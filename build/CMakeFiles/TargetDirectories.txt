@@ -151,6 +151,7 @@ C:/mcp-test/aeromesh/build/core/tests/CMakeFiles/aeromesh_stun_tests.dir
 C:/mcp-test/aeromesh/build/core/tests/CMakeFiles/aeromesh_holepunch_tests.dir
 C:/mcp-test/aeromesh/build/core/tests/CMakeFiles/aeromesh_relay_tests.dir
 C:/mcp-test/aeromesh/build/core/tests/CMakeFiles/aeromesh_link_tests.dir
+C:/mcp-test/aeromesh/build/core/tests/CMakeFiles/aeromesh_vault_tests.dir
 C:/mcp-test/aeromesh/build/core/tests/CMakeFiles/PACKAGE.dir
 C:/mcp-test/aeromesh/build/core/tests/CMakeFiles/RUN_TESTS.dir
 C:/mcp-test/aeromesh/build/core/tests/CMakeFiles/INSTALL.dir

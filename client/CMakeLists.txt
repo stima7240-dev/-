@@ -27,6 +27,10 @@ set(CMAKE_AUTOMOC ON)
 qt_add_executable(aeromesh_client
     main.cpp
     Backend.h
+    WinFrame.h
+    NetworkEngine.h
+    ChatService.h
+    DhtService.h
 )
 
 qt_add_qml_module(aeromesh_client
@@ -46,7 +50,13 @@ target_link_libraries(aeromesh_client
         Qt6::Quick
         Qt6::QuickControls2
         aeromesh::core
+        aeromesh::platform
 )
+
+# Native Win32 window handling (Snap Layouts, custom frame, rounded corners).
+if(WIN32)
+    target_link_libraries(aeromesh_client PRIVATE user32 dwmapi)
+endif()
 
 # On Windows, make this a GUI app (no console window) for Release builds.
 set_target_properties(aeromesh_client PROPERTIES

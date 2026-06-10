@@ -1,0 +1,143 @@
+{
+    "classes": [
+        {
+            "className": "DhtService",
+            "lineNumber": 54,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "hostPort",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "lineNumber": 114,
+                    "name": "setBootstrap",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "lineNumber": 125,
+                    "name": "announce",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "share",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "lineNumber": 137,
+                    "name": "resolve",
+                    "returnType": "QString"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "lineNumber": 56,
+                    "name": "bootstrap",
+                    "notify": "bootstrapChanged",
+                    "override": false,
+                    "read": "bootstrap",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "lineNumber": 57,
+                    "name": "ready",
+                    "notify": "readyChanged",
+                    "override": false,
+                    "read": "ready",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "virtual": false
+                }
+            ],
+            "qualifiedClassName": "DhtService",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 184,
+                    "name": "bootstrapChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "lineNumber": 185,
+                    "name": "readyChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "share",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "host",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "port",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 2,
+                    "lineNumber": 187,
+                    "name": "resolved",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "share",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "reason",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "lineNumber": 189,
+                    "name": "resolveFailed",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "DhtService.h",
+    "outputRevision": 69
+}

@@ -1,4 +1,4 @@
-set(qml_import_scanner_imports_count 11)
+set(qml_import_scanner_imports_count 12)
 set(qml_import_scanner_import_0 "CLASSNAME;QtQuick2Plugin;LINKTARGET;Qt6::qtquick2plugin;NAME;QtQuick;PATH;C:/Qt/6.11.1/msvc2022_64/qml/QtQuick;PLUGIN;qtquick2plugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/QtQuick/;RELATIVEPATH;QtQuick;TYPE;module;")
 set(qml_import_scanner_import_1 "CLASSNAME;QtQmlPlugin;LINKTARGET;Qt6::qmlplugin;NAME;QtQml;PATH;C:/Qt/6.11.1/msvc2022_64/qml/QtQml;PLUGIN;qmlplugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/QtQml/;RELATIVEPATH;QtQml;TYPE;module;")
 set(qml_import_scanner_import_2 "NAME;QML;PATH;C:/Qt/6.11.1/msvc2022_64/qml/QML;PREFER;:/qt-project.org/imports/QML/;RELATIVEPATH;QML;TYPE;module;")
@@ -10,4 +10,5 @@ set(qml_import_scanner_import_7 "CLASSNAME;QtQuickControls2ImplPlugin;COMPONENTS
 set(qml_import_scanner_import_8 "CLASSNAME;QtQuickControls2BasicStyleImplPlugin;COMPONENTS;C:/Qt/6.11.1/msvc2022_64/qml/QtQuick/Controls/Basic/impl/TextEditingContextMenu.qml;LINKTARGET;Qt6::qtquickcontrols2basicstyleimplplugin;NAME;QtQuick.Controls.Basic.impl;PATH;C:/Qt/6.11.1/msvc2022_64/qml/QtQuick/Controls/Basic/impl;PLUGIN;qtquickcontrols2basicstyleimplplugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/QtQuick/Controls/Basic/impl/;RELATIVEPATH;QtQuick/Controls/Basic/impl;TYPE;module;")
 set(qml_import_scanner_import_9 "CLASSNAME;QmlShapesPlugin;LINKTARGET;Qt6::qmlshapesplugin;NAME;QtQuick.Shapes;PATH;C:/Qt/6.11.1/msvc2022_64/qml/QtQuick/Shapes;PLUGIN;qmlshapesplugin;PREFER;:/qt-project.org/imports/QtQuick/Shapes/;RELATIVEPATH;QtQuick/Shapes;TYPE;module;")
 set(qml_import_scanner_import_10 "CLASSNAME;QtQuickLayoutsPlugin;LINKTARGET;Qt6::qquicklayoutsplugin;NAME;QtQuick.Layouts;PATH;C:/Qt/6.11.1/msvc2022_64/qml/QtQuick/Layouts;PLUGIN;qquicklayoutsplugin;PLUGINISOPTIONAL;;PREFER;:/qt-project.org/imports/QtQuick/Layouts/;RELATIVEPATH;QtQuick/Layouts;TYPE;module;")
+set(qml_import_scanner_import_11 "CLASSNAME;QtQuick_WindowPlugin;LINKTARGET;Qt6::quickwindow;NAME;QtQuick.Window;PATH;C:/Qt/6.11.1/msvc2022_64/qml/QtQuick/Window;PLUGIN;quickwindowplugin;PREFER;:/qt-project.org/imports/QtQuick/Window/;RELATIVEPATH;QtQuick/Window;TYPE;module;")
 

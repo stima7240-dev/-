@@ -74,6 +74,9 @@
       <FullPath>C:\mcp-test\aeromesh\build\platform\tests\Release\aeromesh_udp_tests.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>
+      <FullPath>C:\mcp-test\aeromesh\build\core\tests\Release\aeromesh_vault_tests.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
       <FullPath>C:\mcp-test\aeromesh\build\x64\Release\ALL_BUILD</FullPath>
     </ProjectOutput>
   </ProjectOutputs>

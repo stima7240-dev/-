@@ -1,0 +1,113 @@
+{
+    "classes": [
+        {
+            "className": "ChatService",
+            "lineNumber": 51,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "share",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "host",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "port",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 2,
+                    "lineNumber": 105,
+                    "name": "connectToPeer",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 3,
+                    "isConst": true,
+                    "lineNumber": 142,
+                    "name": "messages",
+                    "returnType": "QVariantList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        },
+                        {
+                            "name": "text",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "lineNumber": 151,
+                    "name": "sendMessage",
+                    "returnType": "QString"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "lineNumber": 53,
+                    "name": "contacts",
+                    "notify": "contactsChanged",
+                    "override": false,
+                    "read": "contacts",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false,
+                    "virtual": false
+                }
+            ],
+            "qualifiedClassName": "ChatService",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 182,
+                    "name": "contactsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 1,
+                    "lineNumber": 183,
+                    "name": "messagesChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "ChatService.h",
+    "outputRevision": 69
+}

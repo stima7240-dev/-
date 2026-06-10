@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Layouts
+import QtQuick.Window
 
 // AeroMesh desktop client shell. Frameless window with custom window controls,
 // monochrome black-grey theme, no emoji (all icons are drawn vector shapes).
@@ -13,8 +14,8 @@ ApplicationWindow {
     height: 720
     visible: true
     title: "AeroMesh"
-    color: "transparent"
-    flags: Qt.Window | Qt.FramelessWindowHint
+    color: "#0d0d0f"
+    flags: Qt.Window | Qt.WindowMinimizeButtonHint | Qt.WindowMaximizeButtonHint
 
     property bool maximized: false
     function toggleMaximized() {
@@ -27,26 +28,133 @@ ApplicationWindow {
         }
     }
 
-    // ---- Account state ----
+    // ---- Window dragging: native move; the window shrinks to 800x600 and
+    // keeps that size (it does not grow back when the drag ends) ----
+    function beginWindowDrag() {
+        if (root.maximized)
+            return
+        if (root.width > 800 || root.height > 600) {
+            root.width = 800
+            root.height = 600
+        }
+        root.startSystemMove()
+    }
+
+    // ---- Minimize / restore with a scale + fade animation ----
+    property int _prevVisibility: Window.Windowed
+    function minimizeWithAnim() { minimizeAnim.restart() }
+    onVisibilityChanged: {
+        if (root.visibility !== Window.Minimized && root._prevVisibility === Window.Minimized)
+            restoreAnim.restart()
+        if (root.visibility !== Window.Hidden)
+            root._prevVisibility = root.visibility
+    }
+    SequentialAnimation {
+        id: minimizeAnim
+        ParallelAnimation {
+            NumberAnimation { target: root.contentItem; property: "scale"; to: 0.85; duration: 170; easing.type: Easing.InCubic }
+            NumberAnimation { target: root.contentItem; property: "opacity"; to: 0.0; duration: 170 }
+        }
+        ScriptAction { script: root.showMinimized() }
+    }
+    ParallelAnimation {
+        id: restoreAnim
+        NumberAnimation { target: root.contentItem; property: "scale"; from: 0.85; to: 1.0; duration: 230; easing.type: Easing.OutCubic }
+        NumberAnimation { target: root.contentItem; property: "opacity"; from: 0.0; to: 1.0; duration: 210; easing.type: Easing.OutCubic }
+    }
+
+    // ---- Account state (mirrors the encrypted multi-account vault) ----
     ListModel { id: accountsModel }
-    property int currentAccount: 0
+    property int currentAccount: -1
     property var activeAccount: (currentAccount >= 0 && currentAccount < accountsModel.count)
                                 ? accountsModel.get(currentAccount) : null
     property bool accountsExpanded: false
+    // Local-only profile extras (not part of the encrypted identity).
+    property string profileBio: ""
+    property string profileBirthday: ""
 
-    function addAccount(rawName) {
-        var name = (rawName || "").trim()
-        if (name.length === 0)
-            return
+    function avatarColorFor(seed) {
         var colors = ["#5a5a61", "#47474d", "#6a6a72", "#3f3f45", "#54545b", "#605863"]
-        accountsModel.append({
-            name: name,
-            handle: "@" + name.toLowerCase().replace(/[^a-z0-9]+/g, ""),
-            avatarColor: colors[accountsModel.count % colors.length],
-            bio: "",
-            birthday: ""
-        })
-        currentAccount = accountsModel.count - 1
+        var s = (seed || "")
+        var sum = 0
+        for (var i = 0; i < s.length; ++i)
+            sum += s.charCodeAt(i)
+        return colors[Math.abs(sum) % colors.length]
+    }
+
+    // Rebuild the local account list from the backend's unlocked accounts.
+    function syncAccounts() {
+        var list = backend.accounts
+        accountsModel.clear()
+        var activeIdx = -1
+        for (var i = 0; i < list.length; ++i) {
+            var a = list[i]
+            accountsModel.append({
+                name: a.name.length > 0 ? a.name : "Аккаунт",
+                handle: a.fingerprint,
+                avatarColor: root.avatarColorFor(a.fingerprint)
+            })
+            if (a.active)
+                activeIdx = i
+        }
+        root.currentAccount = (activeIdx >= 0) ? activeIdx
+                                               : (list.length > 0 ? 0 : -1)
+    }
+
+    Connections {
+        target: backend
+        function onAccountsChanged() { root.syncAccounts() }
+    }
+
+    // Live updates from the secure chat service: a message arrived or a
+    // handshake finished. Refresh the open conversation when it is affected.
+    Connections {
+        target: chat
+        function onMessagesChanged(index) {
+            if (root.peerIndexOf(chatList.currentIndex) === index)
+                root.loadMessages(chatList.currentIndex)
+        }
+        function onContactsChanged() {
+            if (root.peerIndexOf(chatList.currentIndex) >= 0)
+                root.loadMessages(chatList.currentIndex)
+        }
+    }
+
+    // Address discovery results from the DHT. When a friend's key resolves to a
+    // live network address, finish adding them (connect + create the chat);
+    // otherwise explain why the lookup failed. Only acts on the request that
+    // the "Add friend" dialog is currently waiting for.
+    Connections {
+        target: dht
+        function onResolved(share, host, port) {
+            if (!addFriendDialog.resolving || share !== addFriendDialog.pendingKey)
+                return
+            addFriendDialog.resolving = false
+            addFriendDialog.infoText = ""
+            var err = chat.connectToPeer(addFriendDialog.pendingKey, host, port)
+            if (err !== "") {
+                addFriendDialog.errorText = (err === "offline")
+                    ? "Сеть ещё не готова — повторите через секунду"
+                    : "Не удалось начать подключение"
+                return
+            }
+            var nm = addFriendDialog.pendingAlias.length > 0
+                     ? addFriendDialog.pendingAlias
+                     : ("Контакт " + addFriendDialog.pendingFp.substring(0, 9))
+            contactsModel.append({ name: nm, handle: addFriendDialog.pendingFp })
+            root.createRealChat(nm, root.peerIndexForFingerprint(addFriendDialog.pendingFp))
+            addFriendDialog.close()
+        }
+        function onResolveFailed(share, reason) {
+            if (!addFriendDialog.resolving || share !== addFriendDialog.pendingKey)
+                return
+            addFriendDialog.resolving = false
+            addFriendDialog.infoText = ""
+            if (reason === "timeout")
+                addFriendDialog.errorText = "Собеседник не найден в сети. Проверьте, что он в сети и что адрес сети указан верно."
+            else
+                addFriendDialog.errorText = "Не удалось найти собеседника"
+        }
     }
 
     // ---- Monochrome black-grey palette ----
@@ -64,6 +172,403 @@ ApplicationWindow {
         readonly property color rowHover: "#1d1d20"
         readonly property color rowSelected: "#2a2a2e"
         readonly property color closeHover: "#c23b3b"
+    }
+
+    // ---- Account gate: registration / login overlay ----
+    // Covers the whole window until the encrypted identity is unlocked
+    // (backend.accountState === "ready"). Backend decides the screen:
+    // "register" -> choose a password, "locked" -> enter the password.
+    Rectangle {
+        id: authGate
+        anchors.fill: parent
+        z: 5000
+        visible: backend.accountState !== "ready"
+        color: theme.windowBg
+        radius: 12
+        antialiasing: true
+
+        // When account files exist (state "locked") the gate shows the login
+        // form; flip this to show the registration form for an extra account.
+        property bool forceRegister: false
+
+        // Swallow clicks so the messenger behind cannot be used while locked.
+        MouseArea { anchors.fill: parent; hoverEnabled: true }
+
+        function messageFor(code) {
+            if (code === "weak") return "Пароль слишком короткий (минимум 8 символов)."
+            if (code === "wrong") return "Неверный пароль. Попробуйте ещё раз."
+            if (code === "corrupt") return "Файл аккаунта повреждён."
+            if (code === "io") return "Не удалось сохранить файл аккаунта."
+            if (code === "missing") return "Файл аккаунта не найден."
+            if (code === "crypto") return "Ошибка шифрования."
+            return "Не удалось выполнить операцию."
+        }
+
+        function doRegister() {
+            regError.text = ""
+            if (regName.text.trim().length === 0) {
+                regError.text = "Введите имя аккаунта."
+                return
+            }
+            if (regPass.text.length === 0) {
+                regError.text = "Введите пароль."
+                return
+            }
+            if (regPass.text !== regConfirm.text) {
+                regError.text = "Пароли не совпадают."
+                return
+            }
+            var code = backend.createAccount(regName.text, regPass.text)
+            if (code !== "") {
+                regError.text = authGate.messageFor(code)
+            } else {
+                regName.text = ""
+                regPass.text = ""
+                regConfirm.text = ""
+                authGate.forceRegister = false
+            }
+        }
+
+        function doLogin() {
+            loginError.text = ""
+            var code = backend.unlock(loginPass.text)
+            if (code !== "") {
+                loginError.text = authGate.messageFor(code)
+            } else {
+                loginPass.text = ""
+            }
+        }
+
+        // ----- Registration screen -----
+        ColumnLayout {
+            anchors.centerIn: parent
+            width: 340
+            spacing: 14
+            visible: backend.accountState === "register"
+                     || (backend.accountState === "locked" && authGate.forceRegister)
+
+            Text {
+                Layout.alignment: Qt.AlignHCenter
+                text: "AeroMesh"
+                color: theme.text
+                font.pixelSize: 30
+                font.bold: true
+                font.letterSpacing: 2
+            }
+            Text {
+                Layout.alignment: Qt.AlignHCenter
+                Layout.bottomMargin: 6
+                text: "Регистрация нового аккаунта"
+                color: theme.subtext
+                font.pixelSize: 14
+            }
+
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 46
+                radius: 10
+                color: theme.field
+                border.width: 1
+                border.color: regName.activeFocus ? theme.accentHover : "#2c2c31"
+                TextField {
+                    id: regName
+                    anchors.fill: parent
+                    anchors.leftMargin: 14
+                    anchors.rightMargin: 14
+                    verticalAlignment: TextInput.AlignVCenter
+                    placeholderText: "Имя аккаунта"
+                    placeholderTextColor: theme.subtext
+                    color: theme.text
+                    font.pixelSize: 15
+                    background: Item { }
+                    onAccepted: regPass.forceActiveFocus()
+                }
+            }
+
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 46
+                radius: 10
+                color: theme.field
+                border.width: 1
+                border.color: regPass.activeFocus ? theme.accentHover : "#2c2c31"
+                TextField {
+                    id: regPass
+                    anchors.fill: parent
+                    anchors.leftMargin: 14
+                    anchors.rightMargin: 14
+                    verticalAlignment: TextInput.AlignVCenter
+                    echoMode: TextInput.Password
+                    placeholderText: "Пароль"
+                    placeholderTextColor: theme.subtext
+                    color: theme.text
+                    font.pixelSize: 15
+                    background: Item { }
+                    onAccepted: regConfirm.forceActiveFocus()
+                }
+            }
+
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 46
+                radius: 10
+                color: theme.field
+                border.width: 1
+                border.color: regConfirm.activeFocus ? theme.accentHover : "#2c2c31"
+                TextField {
+                    id: regConfirm
+                    anchors.fill: parent
+                    anchors.leftMargin: 14
+                    anchors.rightMargin: 14
+                    verticalAlignment: TextInput.AlignVCenter
+                    echoMode: TextInput.Password
+                    placeholderText: "Повторите пароль"
+                    placeholderTextColor: theme.subtext
+                    color: theme.text
+                    font.pixelSize: 15
+                    background: Item { }
+                    onAccepted: authGate.doRegister()
+                }
+            }
+
+            Text {
+                id: regError
+                Layout.fillWidth: true
+                text: ""
+                visible: text !== ""
+                color: "#c23b3b"
+                font.pixelSize: 13
+                wrapMode: Text.WordWrap
+            }
+
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 46
+                radius: 10
+                color: regMa.containsMouse ? theme.accentHover : theme.accent
+                Text {
+                    anchors.centerIn: parent
+                    text: "Создать аккаунт"
+                    color: theme.text
+                    font.pixelSize: 15
+                    font.bold: true
+                }
+                MouseArea {
+                    id: regMa
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: authGate.doRegister()
+                }
+            }
+
+            Text {
+                Layout.fillWidth: true
+                Layout.topMargin: 6
+                text: "Аккаунт хранится только на этом устройстве в зашифрованном файле. Если потерять пароль, восстановить доступ будет невозможно."
+                color: theme.subtext
+                font.pixelSize: 11
+                wrapMode: Text.WordWrap
+                horizontalAlignment: Text.AlignHCenter
+            }
+
+            Text {
+                visible: authGate.forceRegister
+                Layout.alignment: Qt.AlignHCenter
+                Layout.topMargin: 2
+                text: "Войти в существующий аккаунт"
+                color: regBackMa.containsMouse ? theme.text : theme.subtext
+                font.pixelSize: 12
+                MouseArea {
+                    id: regBackMa
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: {
+                        regError.text = ""
+                        authGate.forceRegister = false
+                    }
+                }
+            }
+        }
+
+        // ----- Login screen -----
+        ColumnLayout {
+            anchors.centerIn: parent
+            width: 340
+            spacing: 14
+            visible: backend.accountState === "locked" && !authGate.forceRegister
+
+            Text {
+                Layout.alignment: Qt.AlignHCenter
+                text: "AeroMesh"
+                color: theme.text
+                font.pixelSize: 30
+                font.bold: true
+                font.letterSpacing: 2
+            }
+            Text {
+                Layout.alignment: Qt.AlignHCenter
+                Layout.bottomMargin: 6
+                text: "Введите пароль для входа"
+                color: theme.subtext
+                font.pixelSize: 14
+            }
+
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 46
+                radius: 10
+                color: theme.field
+                border.width: 1
+                border.color: loginPass.activeFocus ? theme.accentHover : "#2c2c31"
+                TextField {
+                    id: loginPass
+                    anchors.fill: parent
+                    anchors.leftMargin: 14
+                    anchors.rightMargin: 14
+                    verticalAlignment: TextInput.AlignVCenter
+                    echoMode: TextInput.Password
+                    placeholderText: "Пароль"
+                    placeholderTextColor: theme.subtext
+                    color: theme.text
+                    font.pixelSize: 15
+                    background: Item { }
+                    onAccepted: authGate.doLogin()
+                }
+            }
+
+            Text {
+                id: loginError
+                Layout.fillWidth: true
+                text: ""
+                visible: text !== ""
+                color: "#c23b3b"
+                font.pixelSize: 13
+                wrapMode: Text.WordWrap
+            }
+
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.preferredHeight: 46
+                radius: 10
+                color: loginMa.containsMouse ? theme.accentHover : theme.accent
+                Text {
+                    anchors.centerIn: parent
+                    text: "Войти"
+                    color: theme.text
+                    font.pixelSize: 15
+                    font.bold: true
+                }
+                MouseArea {
+                    id: loginMa
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: authGate.doLogin()
+                }
+            }
+
+            Text {
+                Layout.alignment: Qt.AlignHCenter
+                Layout.topMargin: 4
+                text: "Создать новый аккаунт"
+                color: delMa.containsMouse ? theme.text : theme.subtext
+                font.pixelSize: 12
+                MouseArea {
+                    id: delMa
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: {
+                        loginError.text = ""
+                        authGate.forceRegister = true
+                    }
+                }
+            }
+        }
+
+        // ----- Crypto initialization failure -----
+        Text {
+            anchors.centerIn: parent
+            visible: backend.accountState === "error"
+            text: "Не удалось инициализировать криптографию"
+            color: "#c23b3b"
+            font.pixelSize: 16
+        }
+
+        // Frameless-window controls for the gate (drag + minimize + close),
+        // since the messenger's own controls are hidden behind this overlay.
+        Item {
+            id: authTopBar
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+            height: 44
+
+            MouseArea {
+                anchors.fill: parent
+                onPressed: root.startSystemMove()
+            }
+
+            Row {
+                anchors.right: parent.right
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.rightMargin: 10
+                spacing: 4
+
+                Rectangle {
+                    width: 34
+                    height: 30
+                    radius: 8
+                    color: authMinMa.containsMouse ? theme.rowHover : "transparent"
+                    Rectangle {
+                        anchors.centerIn: parent
+                        width: 12
+                        height: 1.6
+                        color: theme.subtext
+                    }
+                    MouseArea {
+                        id: authMinMa
+                        anchors.fill: parent
+                        hoverEnabled: true
+                        onClicked: root.showMinimized()
+                    }
+                }
+                Rectangle {
+                    width: 34
+                    height: 30
+                    radius: 8
+                    color: authCloseMa.containsMouse ? theme.closeHover : "transparent"
+                    Canvas {
+                        anchors.centerIn: parent
+                        width: 12
+                        height: 12
+                        property color c: authCloseMa.containsMouse ? "#ffffff" : theme.subtext
+                        onCChanged: requestPaint()
+                        onPaint: {
+                            var ctx = getContext("2d")
+                            ctx.reset()
+                            ctx.strokeStyle = c
+                            ctx.lineWidth = 1.6
+                            ctx.lineCap = "round"
+                            ctx.beginPath()
+                            ctx.moveTo(1, 1)
+                            ctx.lineTo(11, 11)
+                            ctx.moveTo(11, 1)
+                            ctx.lineTo(1, 11)
+                            ctx.stroke()
+                        }
+                    }
+                    MouseArea {
+                        id: authCloseMa
+                        anchors.fill: parent
+                        hoverEnabled: true
+                        onClicked: Qt.quit()
+                    }
+                }
+            }
+        }
     }
 
     // ---- Drawn vector icons (no emoji). Selected by `kind`. ----
@@ -227,8 +732,33 @@ ApplicationWindow {
     property bool soundEnabled: true
     property bool hidePreview: false
 
+    function formatTime(ms) {
+        if (!ms || ms <= 0)
+            return ""
+        var d = new Date(ms)
+        var hh = ("0" + d.getHours()).slice(-2)
+        var mm = ("0" + d.getMinutes()).slice(-2)
+        return hh + ":" + mm
+    }
+
+    // Index into the live chat service's peer list for the conversation shown
+    // at chatsModel row `idx`, or -1 for the sample/demo chats.
+    function peerIndexOf(idx) {
+        if (idx < 0 || idx >= chatsModel.count)
+            return -1
+        var entry = chatsModel.get(idx)
+        return (entry && entry.peerIndex !== undefined) ? entry.peerIndex : -1
+    }
+
     function loadMessages(idx) {
         messagesModel.clear()
+        var pidx = root.peerIndexOf(idx)
+        if (pidx >= 0) {
+            var msgs = chat.messages(pidx)
+            for (var j = 0; j < msgs.length; ++j)
+                messagesModel.append({ text: msgs[j].text, mine: msgs[j].mine, time: root.formatTime(msgs[j].ts) })
+            return
+        }
         var arr = root.sampleMessages[idx]
         if (arr === undefined)
             return
@@ -240,6 +770,20 @@ ApplicationWindow {
         var t = msgInput.text.trim()
         if (t.length === 0)
             return
+        var idx = chatList.currentIndex
+        var pidx = root.peerIndexOf(idx)
+        if (pidx >= 0) {
+            var code = chat.sendMessage(pidx, t)
+            if (code !== "") {
+                // Most often "nosession": the secure handshake has not finished
+                // yet. Keep the typed text so the user can resend in a moment.
+                return
+            }
+            msgInput.text = ""
+            root.loadMessages(idx)
+            msgList.positionViewAtEnd()
+            return
+        }
         messagesModel.append({ text: t, mine: true, time: "\u0441\u0435\u0439\u0447\u0430\u0441" })
         msgInput.text = ""
         msgList.positionViewAtEnd()
@@ -254,7 +798,31 @@ ApplicationWindow {
         var nm = (chatName || "").trim()
         if (nm.length === 0)
             return
-        chatsModel.append({ name: nm, last: lastText, time: "\u0441\u0435\u0439\u0447\u0430\u0441", unread: 0, avatarColor: root.randomAvatarColor() })
+        chatsModel.append({ name: nm, last: lastText, time: "\u0441\u0435\u0439\u0447\u0430\u0441", unread: 0, avatarColor: root.randomAvatarColor(), peerIndex: -1 })
+        chatList.currentIndex = chatsModel.count - 1
+    }
+
+    // Find the live chat-service peer index whose key fingerprint matches.
+    function peerIndexForFingerprint(fp) {
+        var list = chat.contacts
+        for (var i = 0; i < list.length; ++i) {
+            if (list[i].fingerprint === fp)
+                return i
+        }
+        return -1
+    }
+
+    // Open (or focus) a real, end-to-end-encrypted conversation bound to a
+    // chat-service peer.
+    function createRealChat(nm, peerIndex) {
+        for (var i = 0; i < chatsModel.count; ++i) {
+            if (peerIndex >= 0 && chatsModel.get(i).peerIndex === peerIndex) {
+                chatList.currentIndex = i
+                root.loadMessages(i)
+                return
+            }
+        }
+        chatsModel.append({ name: nm, last: "\u0417\u0430\u0449\u0438\u0449\u0451\u043d\u043d\u044b\u0439 \u0447\u0430\u0442", time: "\u0441\u0435\u0439\u0447\u0430\u0441", unread: 0, avatarColor: root.randomAvatarColor(), peerIndex: peerIndex })
         chatList.currentIndex = chatsModel.count - 1
     }
 
@@ -268,16 +836,12 @@ ApplicationWindow {
     }
 
     Component.onCompleted: {
-        addAccount("Timoxa")
-        addAccount("Artem")
-        currentAccount = 0
-        accountsModel.setProperty(0, "bio", "Создаю анонимный мессенджер AeroMesh")
-        accountsModel.setProperty(0, "birthday", "9 окт 2012")
+        root.syncAccounts()
 
-        chatsModel.append({ name: "Alice", last: "\u041f\u0440\u0438\u0432\u0435\u0442! \u041a\u0430\u043a \u0434\u0435\u043b\u0430?", time: "10:24", unread: 0, avatarColor: "#5a5a61" })
-        chatsModel.append({ name: "\u041a\u043e\u043c\u0430\u043d\u0434\u0430 AeroMesh", last: "\u0414\u0435\u043d\u0438\u0441: \u0441\u0431\u043e\u0440 \u0432 18:00", time: "9:58", unread: 3, avatarColor: "#47474d" })
-        chatsModel.append({ name: "\u0411\u043e\u0431", last: "\u0421\u043a\u0438\u043d\u0443\u043b \u0444\u0430\u0439\u043b \u043f\u0440\u043e\u0435\u043a\u0442\u0430", time: "\u0412\u0447\u0435\u0440\u0430", unread: 0, avatarColor: "#6a6a72" })
-        chatsModel.append({ name: "\u0421\u043e\u0445\u0440\u0430\u043d\u0451\u043d\u043d\u044b\u0435", last: "\u0417\u0430\u043c\u0435\u0442\u043a\u0430 \u0434\u043b\u044f \u0441\u0435\u0431\u044f", time: "\u041f\u043d", unread: 0, avatarColor: "#3f3f45" })
+        chatsModel.append({ name: "Alice", last: "\u041f\u0440\u0438\u0432\u0435\u0442! \u041a\u0430\u043a \u0434\u0435\u043b\u0430?", time: "10:24", unread: 0, avatarColor: "#5a5a61", peerIndex: -1 })
+        chatsModel.append({ name: "\u041a\u043e\u043c\u0430\u043d\u0434\u0430 AeroMesh", last: "\u0414\u0435\u043d\u0438\u0441: \u0441\u0431\u043e\u0440 \u0432 18:00", time: "9:58", unread: 3, avatarColor: "#47474d", peerIndex: -1 })
+        chatsModel.append({ name: "\u0411\u043e\u0431", last: "\u0421\u043a\u0438\u043d\u0443\u043b \u0444\u0430\u0439\u043b \u043f\u0440\u043e\u0435\u043a\u0442\u0430", time: "\u0412\u0447\u0435\u0440\u0430", unread: 0, avatarColor: "#6a6a72", peerIndex: -1 })
+        chatsModel.append({ name: "\u0421\u043e\u0445\u0440\u0430\u043d\u0451\u043d\u043d\u044b\u0435", last: "\u0417\u0430\u043c\u0435\u0442\u043a\u0430 \u0434\u043b\u044f \u0441\u0435\u0431\u044f", time: "\u041f\u043d", unread: 0, avatarColor: "#3f3f45", peerIndex: -1 })
 
         var data = ({})
         data[0] = [ { text: "\u041f\u0440\u0438\u0432\u0435\u0442! \u041a\u0430\u043a \u0434\u0435\u043b\u0430?", mine: false, time: "10:24" }, { text: "\u0412\u0441\u0451 \u043e\u0442\u043b\u0438\u0447\u043d\u043e, \u0437\u0430\u043f\u0443\u0441\u043a\u0430\u044e \u043d\u0430\u0448 \u043c\u0435\u0441\u0441\u0435\u043d\u0434\u0436\u0435\u0440", mine: true, time: "10:25" }, { text: "\u0417\u0432\u0443\u0447\u0438\u0442 \u043a\u0440\u0443\u0442\u043e", mine: false, time: "10:26" } ]
@@ -428,7 +992,7 @@ ApplicationWindow {
                             anchors.fill: parent
                             cursorShape: Qt.PointingHandCursor
                             onClicked: {
-                                root.currentAccount = index
+                                backend.switchAccount(index)
                                 root.accountsExpanded = false
                             }
                         }
@@ -439,8 +1003,14 @@ ApplicationWindow {
 
                 MenuRow {
                     glyphKind: "plus"
-                    label: "\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0430\u043a\u043a\u0430\u0443\u043d\u0442"
-                    onActivated: addAccountDialog.open()
+                    label: "Добавить аккаунт"
+                    onActivated: { menuDrawer.close(); addAccountDialog.open() }
+                }
+
+                MenuRow {
+                    glyphKind: "person"
+                    label: "Войти в другой аккаунт"
+                    onActivated: { menuDrawer.close(); loginAccountDialog.open() }
                 }
                 }
             }
@@ -476,11 +1046,41 @@ ApplicationWindow {
         y: parent ? Math.round((parent.height - height) / 2) : 0
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
         background: Rectangle { color: "#1d1d20"; radius: 16; border.color: "#2c2c31"; border.width: 1 }
+        property string errorText: ""
         onOpened: newAccountField.forceActiveFocus()
+        onClosed: {
+            addAccountDialog.errorText = ""
+            newAccountField.text = ""
+            newAccountPass.text = ""
+            newAccountConfirm.text = ""
+        }
+
+        function messageFor(code) {
+            if (code === "weak") return "Пароль слишком короткий (минимум 8 символов)."
+            if (code === "io") return "Не удалось сохранить файл аккаунта."
+            if (code === "crypto") return "Ошибка шифрования."
+            return "Не удалось создать аккаунт."
+        }
 
         function commit() {
-            root.addAccount(newAccountField.text)
-            newAccountField.text = ""
+            addAccountDialog.errorText = ""
+            if (newAccountField.text.trim().length === 0) {
+                addAccountDialog.errorText = "Введите имя аккаунта."
+                return
+            }
+            if (newAccountPass.text.length === 0) {
+                addAccountDialog.errorText = "Введите пароль."
+                return
+            }
+            if (newAccountPass.text !== newAccountConfirm.text) {
+                addAccountDialog.errorText = "Пароли не совпадают."
+                return
+            }
+            var code = backend.createAccount(newAccountField.text, newAccountPass.text)
+            if (code !== "") {
+                addAccountDialog.errorText = addAccountDialog.messageFor(code)
+                return
+            }
             addAccountDialog.close()
             root.accountsExpanded = false
         }
@@ -526,8 +1126,65 @@ ApplicationWindow {
                     placeholderTextColor: theme.subtext
                     font.pixelSize: 15
                     background: Rectangle { color: "transparent" }
+                    onAccepted: newAccountPass.forceActiveFocus()
+                }
+            }
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.topMargin: 10
+                Layout.leftMargin: 22
+                Layout.rightMargin: 22
+                Layout.preferredHeight: 44
+                radius: 12
+                color: theme.field
+                TextField {
+                    id: newAccountPass
+                    anchors.fill: parent
+                    anchors.leftMargin: 14
+                    anchors.rightMargin: 14
+                    verticalAlignment: TextInput.AlignVCenter
+                    echoMode: TextInput.Password
+                    placeholderText: "Пароль"
+                    color: theme.text
+                    placeholderTextColor: theme.subtext
+                    font.pixelSize: 15
+                    background: Rectangle { color: "transparent" }
+                    onAccepted: newAccountConfirm.forceActiveFocus()
+                }
+            }
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.topMargin: 10
+                Layout.leftMargin: 22
+                Layout.rightMargin: 22
+                Layout.preferredHeight: 44
+                radius: 12
+                color: theme.field
+                TextField {
+                    id: newAccountConfirm
+                    anchors.fill: parent
+                    anchors.leftMargin: 14
+                    anchors.rightMargin: 14
+                    verticalAlignment: TextInput.AlignVCenter
+                    echoMode: TextInput.Password
+                    placeholderText: "Повторите пароль"
+                    color: theme.text
+                    placeholderTextColor: theme.subtext
+                    font.pixelSize: 15
+                    background: Rectangle { color: "transparent" }
                     onAccepted: addAccountDialog.commit()
                 }
+            }
+            Label {
+                visible: addAccountDialog.errorText.length > 0
+                Layout.fillWidth: true
+                Layout.topMargin: 10
+                Layout.leftMargin: 22
+                Layout.rightMargin: 22
+                text: addAccountDialog.errorText
+                color: theme.closeHover
+                font.pixelSize: 12
+                wrapMode: Text.Wrap
             }
             RowLayout {
                 Layout.fillWidth: true
@@ -564,6 +1221,133 @@ ApplicationWindow {
         }
     }
 
+    // ---------- Login-to-existing-account dialog ----------
+    Popup {
+        id: loginAccountDialog
+        modal: true
+        dim: true
+        width: 360
+        padding: 0
+        parent: Overlay.overlay
+        x: parent ? Math.round((parent.width - width) / 2) : 0
+        y: parent ? Math.round((parent.height - height) / 2) : 0
+        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
+        background: Rectangle { color: "#1d1d20"; radius: 16; border.color: "#2c2c31"; border.width: 1 }
+        property string errorText: ""
+        onOpened: loginAccountPass.forceActiveFocus()
+        onClosed: { loginAccountDialog.errorText = ""; loginAccountPass.text = "" }
+
+        function commit() {
+            loginAccountDialog.errorText = ""
+            if (loginAccountPass.text.length === 0) {
+                loginAccountDialog.errorText = "Введите пароль."
+                return
+            }
+            var code = backend.unlock(loginAccountPass.text)
+            if (code !== "") {
+                if (code === "wrong")
+                    loginAccountDialog.errorText = "Аккаунт с таким паролем не найден."
+                else if (code === "missing")
+                    loginAccountDialog.errorText = "Нет сохранённых аккаунтов."
+                else
+                    loginAccountDialog.errorText = "Не удалось войти."
+                return
+            }
+            loginAccountDialog.close()
+            root.accountsExpanded = false
+        }
+
+        contentItem: ColumnLayout {
+            spacing: 0
+            Label {
+                Layout.fillWidth: true
+                Layout.topMargin: 20
+                Layout.leftMargin: 22
+                Layout.rightMargin: 22
+                text: "Войти в аккаунт"
+                color: theme.text
+                font.pixelSize: 18
+                font.bold: true
+            }
+            Label {
+                Layout.fillWidth: true
+                Layout.topMargin: 6
+                Layout.leftMargin: 22
+                Layout.rightMargin: 22
+                text: "Введите пароль аккаунта, чтобы добавить его в список"
+                color: theme.subtext
+                font.pixelSize: 13
+                wrapMode: Text.Wrap
+            }
+            Rectangle {
+                Layout.fillWidth: true
+                Layout.topMargin: 16
+                Layout.leftMargin: 22
+                Layout.rightMargin: 22
+                Layout.preferredHeight: 44
+                radius: 12
+                color: theme.field
+                TextField {
+                    id: loginAccountPass
+                    anchors.fill: parent
+                    anchors.leftMargin: 14
+                    anchors.rightMargin: 14
+                    verticalAlignment: TextInput.AlignVCenter
+                    echoMode: TextInput.Password
+                    placeholderText: "Пароль"
+                    color: theme.text
+                    placeholderTextColor: theme.subtext
+                    font.pixelSize: 15
+                    background: Rectangle { color: "transparent" }
+                    onAccepted: loginAccountDialog.commit()
+                }
+            }
+            Label {
+                visible: loginAccountDialog.errorText.length > 0
+                Layout.fillWidth: true
+                Layout.topMargin: 10
+                Layout.leftMargin: 22
+                Layout.rightMargin: 22
+                text: loginAccountDialog.errorText
+                color: theme.closeHover
+                font.pixelSize: 12
+                wrapMode: Text.Wrap
+            }
+            RowLayout {
+                Layout.fillWidth: true
+                Layout.margins: 18
+                spacing: 10
+                Item { Layout.fillWidth: true }
+                Rectangle {
+                    Layout.preferredWidth: 96
+                    Layout.preferredHeight: 38
+                    radius: 10
+                    color: loginCancelHover.hovered ? theme.rowHover : "transparent"
+                    HoverHandler { id: loginCancelHover }
+                    Label { anchors.centerIn: parent; text: "Отмена"; color: theme.text; font.pixelSize: 14 }
+                    MouseArea {
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: loginAccountDialog.close()
+                    }
+                }
+                Rectangle {
+                    Layout.preferredWidth: 110
+                    Layout.preferredHeight: 38
+                    radius: 10
+                    color: loginOkHover.hovered ? theme.accentHover : theme.accent
+                    HoverHandler { id: loginOkHover }
+                    Label { anchors.centerIn: parent; text: "Войти"; color: "#ffffff"; font.pixelSize: 14; font.bold: true }
+                    MouseArea {
+                        anchors.fill: parent
+                        cursorShape: Qt.PointingHandCursor
+                        onClicked: loginAccountDialog.commit()
+                    }
+                }
+            }
+        }
+    }
+
     // ---------- Profile screen ----------
     Popup {
         id: profileDialog
@@ -575,26 +1359,20 @@ ApplicationWindow {
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
         background: Rectangle { color: "#1d1d20"; radius: 16; border.color: "#2c2c31"; border.width: 1 }
         function sync() {
-            if (root.activeAccount) {
-                profileNameField.text = root.activeAccount.name
-                profileHandleField.text = root.activeAccount.handle
-                profileBioField.text = root.activeAccount.bio
-                profileBirthdayField.text = root.activeAccount.birthday
-            }
+            profileNameField.text = backend.accountName
+            profileHandleField.text = backend.fingerprint
+            profileBioField.text = root.profileBio
+            profileBirthdayField.text = root.profileBirthday
         }
         function save() {
-            if (root.currentAccount < 0)
+            if (!backend.ready)
                 return
             var nm = profileNameField.text.trim()
             if (nm.length === 0)
                 return
-            accountsModel.setProperty(root.currentAccount, "name", nm)
-            accountsModel.setProperty(root.currentAccount, "handle", profileHandleField.text.trim())
-            accountsModel.setProperty(root.currentAccount, "bio", profileBioField.text.trim())
-            accountsModel.setProperty(root.currentAccount, "birthday", profileBirthdayField.text.trim())
-            var i = root.currentAccount
-            root.currentAccount = -1
-            root.currentAccount = i
+            backend.renameAccount(nm)
+            root.profileBio = profileBioField.text.trim()
+            root.profileBirthday = profileBirthdayField.text.trim()
             profileDialog.editMode = false
         }
         onOpened: { profileDialog.editMode = false; profileDialog.sync() }
@@ -694,7 +1472,7 @@ ApplicationWindow {
                 Label {
                     visible: !profileDialog.editMode
                     Layout.fillWidth: true
-                    text: (root.activeAccount && root.activeAccount.bio.length > 0) ? root.activeAccount.bio : "—"
+                    text: root.profileBio.length > 0 ? root.profileBio : "—"
                     color: theme.text; font.pixelSize: 15; wrapMode: Text.Wrap
                 }
                 Rectangle {
@@ -739,10 +1517,14 @@ ApplicationWindow {
                     }
                     Label { Layout.fillWidth: true; text: "Имя пользователя"; color: theme.subtext; font.pixelSize: 13 }
                 }
-                Glyph {
+                Rectangle {
                     visible: !profileDialog.editMode
                     Layout.alignment: Qt.AlignVCenter
-                    kind: "qr"; glyphColor: "#aebccb"
+                    Layout.preferredWidth: 40; Layout.preferredHeight: 40; radius: 20
+                    color: profQrHover.hovered ? "#2a2a2e" : "transparent"
+                    HoverHandler { id: profQrHover }
+                    Glyph { anchors.centerIn: parent; kind: "qr"; glyphColor: "#aebccb" }
+                    MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: { profileDialog.close(); myKeyDialog.open() } }
                 }
             }
             Rectangle { Layout.fillWidth: true; Layout.leftMargin: 22; Layout.rightMargin: 22; Layout.topMargin: 14; Layout.preferredHeight: 1; color: "#26262a" }
@@ -755,7 +1537,7 @@ ApplicationWindow {
                 Label {
                     visible: !profileDialog.editMode
                     Layout.fillWidth: true
-                    text: (root.activeAccount && root.activeAccount.birthday.length > 0) ? root.activeAccount.birthday : "—"
+                    text: root.profileBirthday.length > 0 ? root.profileBirthday : "—"
                     color: theme.text; font.pixelSize: 15
                 }
                 Rectangle {
@@ -824,6 +1606,94 @@ ApplicationWindow {
                     Label { anchors.centerIn: parent; text: "Сохранить"; color: "#ffffff"; font.pixelSize: 14; font.bold: true }
                     MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: profileDialog.save() }
                 }
+            }
+        }
+    }
+
+    // ---------- Мой ключ (для обмена контактами) ----------
+    Popup {
+        id: myKeyDialog
+        modal: true; dim: true; width: 400; padding: 0
+        parent: Overlay.overlay
+        x: parent ? Math.round((parent.width - width) / 2) : 0
+        y: parent ? Math.round((parent.height - height) / 2) : 0
+        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
+        background: Rectangle { color: "#1d1d20"; radius: 16; border.color: "#2c2c31"; border.width: 1 }
+        contentItem: ColumnLayout {
+            spacing: 0
+            RowLayout {
+                Layout.fillWidth: true; Layout.topMargin: 18; Layout.leftMargin: 22; Layout.rightMargin: 18
+                Label { Layout.fillWidth: true; text: "Мой ключ"; color: theme.text; font.pixelSize: 18; font.bold: true }
+                Rectangle {
+                    Layout.preferredWidth: 30; Layout.preferredHeight: 30; radius: 15
+                    color: myKeyCloseHover.hovered ? theme.rowHover : "transparent"
+                    HoverHandler { id: myKeyCloseHover }
+                    Item {
+                        anchors.centerIn: parent; width: 14; height: 14
+                        Rectangle { anchors.centerIn: parent; width: 15; height: 1.6; radius: 1; rotation: 45; color: "#b3b3b9" }
+                        Rectangle { anchors.centerIn: parent; width: 15; height: 1.6; radius: 1; rotation: -45; color: "#b3b3b9" }
+                    }
+                    MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: myKeyDialog.close() }
+                }
+            }
+            Label {
+                Layout.fillWidth: true; Layout.topMargin: 6; Layout.leftMargin: 22; Layout.rightMargin: 22
+                text: "Передайте эту строку собеседнику, чтобы он добавил Вас в контакты. Отпечаток ниже позволяет сверить ключ при встрече."
+                color: theme.subtext; font.pixelSize: 13; wrapMode: Text.Wrap
+            }
+            Label {
+                Layout.fillWidth: true; Layout.topMargin: 14; Layout.leftMargin: 22; Layout.rightMargin: 22
+                text: backend.ready ? backend.fingerprint : "—"
+                color: theme.text; font.pixelSize: 16; font.bold: true; font.family: "Consolas"
+            }
+            Rectangle {
+                Layout.fillWidth: true; Layout.topMargin: 12; Layout.leftMargin: 22; Layout.rightMargin: 22
+                Layout.preferredHeight: 74; radius: 12; color: theme.field
+                TextEdit {
+                    id: myKeyText
+                    anchors.fill: parent; anchors.margins: 12
+                    readOnly: true; selectByMouse: true; wrapMode: TextEdit.WrapAnywhere
+                    text: backend.shareString
+                    color: theme.text; font.pixelSize: 12; font.family: "Consolas"
+                    selectionColor: theme.accentHover
+                }
+            }
+            Label {
+                Layout.fillWidth: true; Layout.topMargin: 16; Layout.leftMargin: 22; Layout.rightMargin: 22
+                text: "Ваш адрес для прямого подключения"
+                color: theme.subtext; font.pixelSize: 13; wrapMode: Text.Wrap
+            }
+            Rectangle {
+                Layout.fillWidth: true; Layout.topMargin: 8; Layout.leftMargin: 22; Layout.rightMargin: 22
+                Layout.preferredHeight: 46; radius: 12; color: theme.field
+                RowLayout {
+                    anchors.fill: parent; anchors.leftMargin: 12; anchors.rightMargin: 12; spacing: 10
+                    Rectangle {
+                        Layout.preferredWidth: 9; Layout.preferredHeight: 9; radius: 5
+                        color: net.online ? "#4caf6a" : "#8b8b91"
+                    }
+                    TextEdit {
+                        Layout.fillWidth: true
+                        readOnly: true; selectByMouse: true
+                        verticalAlignment: TextEdit.AlignVCenter
+                        text: net.online ? ("127.0.0.1:" + net.port) : "Сеть не запущена"
+                        color: theme.text; font.pixelSize: 14; font.family: "Consolas"
+                        selectionColor: theme.accentHover
+                    }
+                }
+            }
+            Label {
+                Layout.fillWidth: true; Layout.topMargin: 8; Layout.leftMargin: 22; Layout.rightMargin: 22
+                text: "Проверка на одном компьютере: откройте второе окно с другим аккаунтом. В нём в окне «Добавить друга» вставьте этот адрес в поле «адрес сети для входа» (один раз), а друга добавляйте по ключу. В одной сети используйте свой IP-адрес вместо 127.0.0.1."
+                color: theme.subtext; font.pixelSize: 11; wrapMode: Text.Wrap
+            }
+            Rectangle {
+                Layout.alignment: Qt.AlignRight; Layout.margins: 18
+                Layout.preferredWidth: 150; Layout.preferredHeight: 38; radius: 10
+                color: myKeyCopyHover.hovered ? theme.accentHover : theme.accent
+                HoverHandler { id: myKeyCopyHover }
+                Label { anchors.centerIn: parent; text: "Выделить ключ"; color: "#ffffff"; font.pixelSize: 14; font.bold: true }
+                MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: myKeyText.selectAll() }
             }
         }
     }
@@ -925,6 +1795,164 @@ ApplicationWindow {
         }
     }
 
+    // ---------- Добавить друга (выпрыгивающее окно с кнопки +) ----------
+    Popup {
+        id: addFriendDialog
+        modal: true; dim: true; width: 380; padding: 0
+        parent: Overlay.overlay
+        x: parent ? Math.round((parent.width - width) / 2) : 0
+        y: parent ? Math.round((parent.height - height) / 2) : 0
+        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
+        background: Rectangle { color: "#1d1d20"; radius: 16; border.color: "#2c2c31"; border.width: 1 }
+        property string errorText: ""
+        property string infoText: ""
+        property bool resolving: false
+        property string pendingKey: ""
+        property string pendingAlias: ""
+        property string pendingFp: ""
+        enter: Transition {
+            NumberAnimation { property: "scale"; from: 0.7; to: 1.0; duration: 280; easing.type: Easing.OutBack; easing.overshoot: 1.7 }
+            NumberAnimation { property: "opacity"; from: 0.0; to: 1.0; duration: 160 }
+        }
+        exit: Transition {
+            NumberAnimation { property: "scale"; from: 1.0; to: 0.85; duration: 150; easing.type: Easing.InQuad }
+            NumberAnimation { property: "opacity"; from: 1.0; to: 0.0; duration: 150 }
+        }
+        onOpened: { bootstrapField.text = dht.bootstrap; friendKeyField.forceActiveFocus() }
+        onClosed: { addFriendDialog.errorText = ""; addFriendDialog.infoText = ""; addFriendDialog.resolving = false; friendAliasField.text = ""; friendKeyField.text = "" }
+        function commit() {
+            addFriendDialog.errorText = ""
+            addFriendDialog.infoText = ""
+            var key = friendKeyField.text.trim()
+            if (key.length === 0) {
+                addFriendDialog.errorText = "Вставьте ключ друга (share-строку)"
+                return
+            }
+            var info = backend.inspectShare(key)
+            if (!info.valid) {
+                addFriendDialog.errorText = "Неверный ключ — проверьте строку"
+                return
+            }
+            // One-time network entry point: remember it for next time.
+            var boot = bootstrapField.text.trim()
+            if (boot.length > 0)
+                dht.setBootstrap(boot)
+            // Set the pending request BEFORE resolving so a synchronous local
+            // hit is still handled by onResolved.
+            addFriendDialog.pendingKey = key
+            addFriendDialog.pendingAlias = friendAliasField.text.trim()
+            addFriendDialog.pendingFp = info.fingerprint
+            addFriendDialog.resolving = true
+            addFriendDialog.infoText = "Идёт поиск собеседника по ключу\u2026"
+            var code = dht.resolve(key)
+            if (code !== "") {
+                addFriendDialog.resolving = false
+                addFriendDialog.infoText = ""
+                if (code === "nobootstrap")
+                    addFriendDialog.errorText = "Сначала укажите адрес сети для входа (один раз)"
+                else if (code === "offline")
+                    addFriendDialog.errorText = "Сеть ещё не готова — повторите через секунду"
+                else if (code === "badkey")
+                    addFriendDialog.errorText = "Неверный ключ — проверьте строку"
+                else
+                    addFriendDialog.errorText = "Не удалось начать поиск"
+            }
+        }
+        contentItem: ColumnLayout {
+            spacing: 0
+            RowLayout {
+                Layout.fillWidth: true; Layout.topMargin: 18; Layout.leftMargin: 22; Layout.rightMargin: 18
+                Label { Layout.fillWidth: true; text: "Добавить друга"; color: theme.text; font.pixelSize: 18; font.bold: true }
+                Rectangle {
+                    Layout.preferredWidth: 30; Layout.preferredHeight: 30; radius: 15
+                    color: friendCloseHover.hovered ? theme.rowHover : "transparent"
+                    HoverHandler { id: friendCloseHover }
+                    Item {
+                        anchors.centerIn: parent; width: 14; height: 14
+                        Rectangle { anchors.centerIn: parent; width: 15; height: 1.6; radius: 1; rotation: 45; color: "#b3b3b9" }
+                        Rectangle { anchors.centerIn: parent; width: 15; height: 1.6; radius: 1; rotation: -45; color: "#b3b3b9" }
+                    }
+                    MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: addFriendDialog.close() }
+                }
+            }
+            Label {
+                Layout.fillWidth: true; Layout.topMargin: 6; Layout.leftMargin: 22; Layout.rightMargin: 22
+                text: "Вставьте ключ (share-строку) друга — адрес найдётся в сети автоматически. Имя можно задать по желанию."
+                color: theme.subtext; font.pixelSize: 13; wrapMode: Text.Wrap
+            }
+            Rectangle {
+                Layout.fillWidth: true; Layout.topMargin: 14; Layout.leftMargin: 22; Layout.rightMargin: 22
+                Layout.preferredHeight: 42; radius: 12; color: theme.field
+                TextField {
+                    id: friendAliasField
+                    anchors.fill: parent; anchors.leftMargin: 14; anchors.rightMargin: 14
+                    verticalAlignment: TextInput.AlignVCenter
+                    placeholderText: "Имя (необязательно)"; color: theme.text; placeholderTextColor: theme.subtext
+                    font.pixelSize: 14; background: Rectangle { color: "transparent" }
+                }
+            }
+            Rectangle {
+                Layout.fillWidth: true; Layout.topMargin: 10; Layout.leftMargin: 22; Layout.rightMargin: 22
+                Layout.preferredHeight: 42; radius: 12; color: theme.field
+                TextField {
+                    id: friendKeyField
+                    anchors.fill: parent; anchors.leftMargin: 14; anchors.rightMargin: 14
+                    verticalAlignment: TextInput.AlignVCenter
+                    placeholderText: "Ключ друга (share-строка)"; color: theme.text; placeholderTextColor: theme.subtext
+                    font.pixelSize: 14; background: Rectangle { color: "transparent" }
+                    onAccepted: bootstrapField.forceActiveFocus()
+                }
+            }
+            Label {
+                Layout.fillWidth: true; Layout.topMargin: 12; Layout.leftMargin: 22; Layout.rightMargin: 22
+                text: "Адрес сети для входа (вводится один раз)"
+                color: theme.subtext; font.pixelSize: 12; wrapMode: Text.Wrap
+            }
+            Rectangle {
+                Layout.fillWidth: true; Layout.topMargin: 6; Layout.leftMargin: 22; Layout.rightMargin: 22
+                Layout.preferredHeight: 42; radius: 12; color: theme.field
+                TextField {
+                    id: bootstrapField
+                    anchors.fill: parent; anchors.leftMargin: 14; anchors.rightMargin: 14
+                    verticalAlignment: TextInput.AlignVCenter
+                    placeholderText: "Адрес сети (хост:порт)"; color: theme.text; placeholderTextColor: theme.subtext
+                    font.pixelSize: 14; background: Rectangle { color: "transparent" }
+                    onAccepted: addFriendDialog.commit()
+                }
+            }
+            Label {
+                visible: addFriendDialog.infoText.length > 0
+                Layout.fillWidth: true; Layout.topMargin: 8; Layout.leftMargin: 22; Layout.rightMargin: 22
+                text: addFriendDialog.infoText
+                color: theme.subtext; font.pixelSize: 12; wrapMode: Text.Wrap
+            }
+            Label {
+                visible: addFriendDialog.errorText.length > 0
+                Layout.fillWidth: true; Layout.topMargin: 8; Layout.leftMargin: 22; Layout.rightMargin: 22
+                text: addFriendDialog.errorText
+                color: theme.closeHover; font.pixelSize: 12; wrapMode: Text.Wrap
+            }
+            RowLayout {
+                Layout.fillWidth: true; Layout.margins: 18; spacing: 10
+                Item { Layout.fillWidth: true }
+                Rectangle {
+                    Layout.preferredWidth: 96; Layout.preferredHeight: 38; radius: 10
+                    color: friendCancelHover.hovered ? theme.rowHover : "transparent"
+                    HoverHandler { id: friendCancelHover }
+                    Label { anchors.centerIn: parent; text: "Отмена"; color: theme.text; font.pixelSize: 14 }
+                    MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: addFriendDialog.close() }
+                }
+                Rectangle {
+                    Layout.preferredWidth: 130; Layout.preferredHeight: 38; radius: 10
+                    color: friendAddHover.hovered ? theme.accentHover : theme.accent
+                    HoverHandler { id: friendAddHover }
+                    Label { anchors.centerIn: parent; text: "Добавить"; color: "#ffffff"; font.pixelSize: 14; font.bold: true }
+                    MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: addFriendDialog.commit() }
+                }
+            }
+        }
+    }
+
     // ---------- Contacts ----------
     Popup {
         id: contactsDialog
@@ -934,14 +1962,6 @@ ApplicationWindow {
         y: parent ? Math.round((parent.height - height) / 2) : 0
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
         background: Rectangle { color: "#1d1d20"; radius: 16; border.color: "#2c2c31"; border.width: 1 }
-        function addContact() {
-            var nm = contactNameField.text.trim()
-            if (nm.length === 0)
-                return
-            var hl = nm.toLowerCase().replace(/[^a-z0-9]+/g, "")
-            contactsModel.append({ name: nm, handle: "@" + hl })
-            contactNameField.text = ""
-        }
         contentItem: ColumnLayout {
             spacing: 0
             RowLayout {
@@ -957,27 +1977,6 @@ ApplicationWindow {
                         Rectangle { anchors.centerIn: parent; width: 15; height: 1.6; radius: 1; rotation: -45; color: "#b3b3b9" }
                     }
                     MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: contactsDialog.close() }
-                }
-            }
-            RowLayout {
-                Layout.fillWidth: true; Layout.topMargin: 12; Layout.leftMargin: 22; Layout.rightMargin: 22; spacing: 10
-                Rectangle {
-                    Layout.fillWidth: true; Layout.preferredHeight: 42; radius: 12; color: theme.field
-                    TextField {
-                        id: contactNameField
-                        anchors.fill: parent; anchors.leftMargin: 14; anchors.rightMargin: 14
-                        verticalAlignment: TextInput.AlignVCenter
-                        placeholderText: "Имя контакта"; color: theme.text; placeholderTextColor: theme.subtext
-                        font.pixelSize: 14; background: Rectangle { color: "transparent" }
-                        onAccepted: contactsDialog.addContact()
-                    }
-                }
-                Rectangle {
-                    Layout.preferredWidth: 46; Layout.preferredHeight: 42; radius: 12
-                    color: contactAddHover.hovered ? theme.accentHover : theme.accent
-                    HoverHandler { id: contactAddHover }
-                    Glyph { anchors.centerIn: parent; kind: "plus"; glyphColor: "#ffffff" }
-                    MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: contactsDialog.addContact() }
                 }
             }
             ListView {
@@ -1154,8 +2153,11 @@ ApplicationWindow {
 
     // ---------- Main two-pane layout ----------
     RowLayout {
+        id: mainLayout
         anchors.fill: parent
         spacing: 0
+        transformOrigin: Item.Center
+        scale: 1.0
 
         // ===== Left pane: chat list =====
         Item {
@@ -1165,8 +2167,6 @@ ApplicationWindow {
             Rectangle {
                 anchors.fill: parent
                 color: theme.sidebarBg
-                topLeftRadius: 12
-                bottomLeftRadius: 12
             }
 
             ColumnLayout {
@@ -1179,7 +2179,7 @@ ApplicationWindow {
 
                     MouseArea {
                         anchors.fill: parent
-                        onPressed: root.startSystemMove()
+                        onPressed: root.beginWindowDrag()
                         onDoubleClicked: root.toggleMaximized()
                     }
 
@@ -1287,9 +2287,11 @@ ApplicationWindow {
                 anchors.bottomMargin: 18
                 color: newHover.hovered ? theme.accentHover : theme.accent
                 HoverHandler { id: newHover }
+                scale: newHover.hovered ? 1.08 : 1.0
+                Behavior on scale { NumberAnimation { duration: 140; easing.type: Easing.OutBack; easing.overshoot: 3.0 } }
                 Rectangle { anchors.centerIn: parent; width: 22; height: 2.6; radius: 1; color: "#ffffff" }
                 Rectangle { anchors.centerIn: parent; width: 2.6; height: 22; radius: 1; color: "#ffffff" }
-                MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor }
+                MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: addFriendDialog.open() }
             }
         }
 
@@ -1301,8 +2303,6 @@ ApplicationWindow {
             Rectangle {
                 anchors.fill: parent
                 color: theme.chatBg
-                topRightRadius: 12
-                bottomRightRadius: 12
             }
 
             ColumnLayout {
@@ -1313,11 +2313,10 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 56
                     color: theme.headerBg
-                    topRightRadius: 12
 
                     MouseArea {
                         anchors.fill: parent
-                        onPressed: root.startSystemMove()
+                        onPressed: root.beginWindowDrag()
                         onDoubleClicked: root.toggleMaximized()
                     }
 
@@ -1401,6 +2400,8 @@ ApplicationWindow {
 
                         Item { Layout.fillWidth: true }
 
+                        RowLayout {
+                        spacing: 0
                         Rectangle {
                             Layout.preferredWidth: 44
                             Layout.preferredHeight: 40
@@ -1410,7 +2411,7 @@ ApplicationWindow {
                             MouseArea {
                                 anchors.fill: parent
                                 cursorShape: Qt.PointingHandCursor
-                                onClicked: root.showMinimized()
+                                onClicked: root.minimizeWithAnim()
                             }
                         }
                         Rectangle {
@@ -1448,6 +2449,7 @@ ApplicationWindow {
                                 onClicked: root.close()
                             }
                         }
+                        }
                     }
                 }
 
@@ -1470,7 +2472,6 @@ ApplicationWindow {
                     Layout.fillWidth: true
                     Layout.preferredHeight: 64
                     color: theme.headerBg
-                    bottomRightRadius: 12
                     RowLayout {
                         anchors.fill: parent
                         anchors.leftMargin: 12
@@ -1542,12 +2543,15 @@ ApplicationWindow {
         }
     }
 
-    // ---------- Resize handles (frameless window) ----------
+    // ---------- Resize handles (frameless window) — kept on top so the
+    // resize cursor always appears, even over the title area on Windows 11 ----
     MouseArea {
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.bottom: parent.bottom
-        width: 6
+        width: 8
+        z: 950
+        acceptedButtons: Qt.LeftButton
         cursorShape: Qt.SizeHorCursor
         onPressed: root.startSystemResize(Qt.LeftEdge)
     }
@@ -1555,7 +2559,9 @@ ApplicationWindow {
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.bottom: parent.bottom
-        width: 6
+        width: 8
+        z: 950
+        acceptedButtons: Qt.LeftButton
         cursorShape: Qt.SizeHorCursor
         onPressed: root.startSystemResize(Qt.RightEdge)
     }
@@ -1563,7 +2569,9 @@ ApplicationWindow {
         anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
-        height: 6
+        height: 8
+        z: 950
+        acceptedButtons: Qt.LeftButton
         cursorShape: Qt.SizeVerCursor
         onPressed: root.startSystemResize(Qt.TopEdge)
     }
@@ -1571,39 +2579,49 @@ ApplicationWindow {
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         anchors.right: parent.right
-        height: 6
+        height: 8
+        z: 950
+        acceptedButtons: Qt.LeftButton
         cursorShape: Qt.SizeVerCursor
         onPressed: root.startSystemResize(Qt.BottomEdge)
     }
     MouseArea {
         anchors.left: parent.left
         anchors.top: parent.top
-        width: 10
-        height: 10
+        width: 12
+        height: 12
+        z: 951
+        acceptedButtons: Qt.LeftButton
         cursorShape: Qt.SizeFDiagCursor
         onPressed: root.startSystemResize(Qt.LeftEdge | Qt.TopEdge)
     }
     MouseArea {
         anchors.right: parent.right
         anchors.top: parent.top
-        width: 10
-        height: 10
+        width: 12
+        height: 12
+        z: 951
+        acceptedButtons: Qt.LeftButton
         cursorShape: Qt.SizeBDiagCursor
         onPressed: root.startSystemResize(Qt.RightEdge | Qt.TopEdge)
     }
     MouseArea {
         anchors.left: parent.left
         anchors.bottom: parent.bottom
-        width: 10
-        height: 10
+        width: 12
+        height: 12
+        z: 951
+        acceptedButtons: Qt.LeftButton
         cursorShape: Qt.SizeBDiagCursor
         onPressed: root.startSystemResize(Qt.LeftEdge | Qt.BottomEdge)
     }
     MouseArea {
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        width: 10
-        height: 10
+        width: 12
+        height: 12
+        z: 951
+        acceptedButtons: Qt.LeftButton
         cursorShape: Qt.SizeFDiagCursor
         onPressed: root.startSystemResize(Qt.RightEdge | Qt.BottomEdge)
     }

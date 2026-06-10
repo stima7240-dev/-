@@ -42,6 +42,18 @@
     <ClInclude Include="C:\mcp-test\aeromesh\client\Backend.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="C:\mcp-test\aeromesh\client\WinFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\mcp-test\aeromesh\client\NetworkEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\mcp-test\aeromesh\client\ChatService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\mcp-test\aeromesh\client\DhtService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="C:\mcp-test\aeromesh\build\client\ddf_aeromesh_client.h">
       <Filter>Source Files\Generated</Filter>
     </ClInclude>

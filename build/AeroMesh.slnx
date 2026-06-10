@@ -15,6 +15,7 @@
 		<BuildDependency Project="client/aeromesh_client_copy_res.vcxproj"/>
 		<BuildDependency Project="client/aeromesh_client_qmlimportscan.vcxproj"/>
 		<BuildDependency Project="core/aeromesh_core.vcxproj"/>
+		<BuildDependency Project="platform/aeromesh_platform.vcxproj"/>
 		<BuildDependency Project="generate_qmlls_build_ini_file.vcxproj"/>
 		<BuildDependency Project="_deps/liboqs-build/src/oqs.vcxproj"/>
 		<BuildDependency Project="_deps/sodium-build/sodium.vcxproj"/>
@@ -124,6 +125,12 @@
 		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
 		<BuildDependency Project="core/aeromesh_core.vcxproj"/>
 		<BuildDependency Project="platform/aeromesh_platform.vcxproj"/>
+		<BuildDependency Project="_deps/liboqs-build/src/oqs.vcxproj"/>
+		<BuildDependency Project="_deps/sodium-build/sodium.vcxproj"/>
+	</Project>
+	<Project Path="core/tests/aeromesh_vault_tests.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="463afc95-7f2f-34b1-9c07-2ed876032af4">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="core/aeromesh_core.vcxproj"/>
 		<BuildDependency Project="_deps/liboqs-build/src/oqs.vcxproj"/>
 		<BuildDependency Project="_deps/sodium-build/sodium.vcxproj"/>
 	</Project>
@@ -400,6 +407,7 @@
 			<BuildDependency Project="core/tests/aeromesh_tests.vcxproj"/>
 			<BuildDependency Project="core/tests/aeromesh_transport_tests.vcxproj"/>
 			<BuildDependency Project="platform/tests/aeromesh_udp_tests.vcxproj"/>
+			<BuildDependency Project="core/tests/aeromesh_vault_tests.vcxproj"/>
 			<BuildDependency Project="_deps/liboqs-build/src/kem/classic_mceliece/classic_mceliece_348864_clean.vcxproj"/>
 			<BuildDependency Project="_deps/liboqs-build/src/kem/classic_mceliece/classic_mceliece_348864f_clean.vcxproj"/>
 			<BuildDependency Project="_deps/liboqs-build/src/kem/classic_mceliece/classic_mceliece_460896_clean.vcxproj"/>
@@ -488,6 +496,7 @@
 			<BuildDependency Project="client/aeromesh_client_copy_res.vcxproj"/>
 			<BuildDependency Project="client/aeromesh_client_qmlimportscan.vcxproj"/>
 			<BuildDependency Project="core/aeromesh_core.vcxproj"/>
+			<BuildDependency Project="platform/aeromesh_platform.vcxproj"/>
 			<BuildDependency Project="generate_qmlls_build_ini_file.vcxproj"/>
 		</Project>
 		<Project Path="client/aeromesh_client_automoc_json_extraction.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="eddb9324-d28b-3728-a61e-6ae9a73de4ef">

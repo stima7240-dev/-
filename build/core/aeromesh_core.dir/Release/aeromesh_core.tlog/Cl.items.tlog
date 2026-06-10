@@ -1,5 +1,6 @@
 C:\mcp-test\aeromesh\core\src\packet.cpp;C:\mcp-test\aeromesh\build\core\aeromesh_core.dir\Release\packet.obj
 C:\mcp-test\aeromesh\core\src\identity.cpp;C:\mcp-test\aeromesh\build\core\aeromesh_core.dir\Release\identity.obj
+C:\mcp-test\aeromesh\core\src\account_vault.cpp;C:\mcp-test\aeromesh\build\core\aeromesh_core.dir\Release\account_vault.obj
 C:\mcp-test\aeromesh\core\src\node_id.cpp;C:\mcp-test\aeromesh\build\core\aeromesh_core.dir\Release\node_id.obj
 C:\mcp-test\aeromesh\core\src\routing_table.cpp;C:\mcp-test\aeromesh\build\core\aeromesh_core.dir\Release\routing_table.obj
 C:\mcp-test\aeromesh\core\src\kademlia.cpp;C:\mcp-test\aeromesh\build\core\aeromesh_core.dir\Release\kademlia.obj

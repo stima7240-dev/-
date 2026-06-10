@@ -250,6 +250,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{5E439467-C0AB-3048-A83C-232D0DD01310}</Project>
       <Name>aeromesh_udp_tests</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\core\tests\aeromesh_vault_tests.vcxproj">
+      <Project>{463AFC95-7F2F-34B1-9C07-2ED876032AF4}</Project>
+      <Name>aeromesh_vault_tests</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\classic_mceliece\classic_mceliece_348864_clean.vcxproj">
       <Project>{E22BCAD7-4A09-342D-A739-7A0E1DFBE630}</Project>
       <Name>classic_mceliece_348864_clean</Name>

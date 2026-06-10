@@ -87,3 +87,9 @@ target_link_libraries(aeromesh_link_tests PRIVATE aeromesh::core)
 
 add_test(NAME link_tests COMMAND aeromesh_link_tests)
 set_tests_properties(link_tests PROPERTIES FAIL_REGULAR_EXPRESSION "FAIL")
+
+add_executable(aeromesh_vault_tests test_account_vault.cpp)
+target_link_libraries(aeromesh_vault_tests PRIVATE aeromesh::core)
+
+add_test(NAME vault_tests COMMAND aeromesh_vault_tests)
+set_tests_properties(vault_tests PROPERTIES FAIL_REGULAR_EXPRESSION "FAIL")

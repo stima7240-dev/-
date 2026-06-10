@@ -1,10 +1,10 @@
-Start testing: Jun 08 03:44 Астраханское стандартное время
+Start testing: Jun 10 08:20 Астраханское стандартное время
 ----------------------------------------------------------
-1/16 Testing: core_tests
-1/16 Test: core_tests
+1/17 Testing: core_tests
+1/17 Test: core_tests
 Command: "C:/mcp-test/aeromesh/build/core/tests/Release/aeromesh_tests.exe"
 Directory: C:/mcp-test/aeromesh/build/core/tests
-"core_tests" start time: Jun 08 03:44 Астраханское стандартное время
+"core_tests" start time: Jun 10 08:20 Астраханское стандартное время
 Output:
 ----------------------------------------------------------
 frame round-trip
@@ -33,15 +33,15 @@ ALL TESTS PASSED
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"core_tests" end time: Jun 08 03:44 Астраханское стандартное время
+"core_tests" end time: Jun 10 08:20 Астраханское стандартное время
 "core_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/16 Testing: dht_tests
-2/16 Test: dht_tests
+2/17 Testing: dht_tests
+2/17 Test: dht_tests
 Command: "C:/mcp-test/aeromesh/build/core/tests/Release/aeromesh_dht_tests.exe"
 Directory: C:/mcp-test/aeromesh/build/core/tests
-"dht_tests" start time: Jun 08 03:44 Астраханское стандартное время
+"dht_tests" start time: Jun 10 08:20 Астраханское стандартное время
 Output:
 ----------------------------------------------------------
 node id + xor distance
@@ -74,15 +74,15 @@ ALL TESTS PASSED
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"dht_tests" end time: Jun 08 03:44 Астраханское стандартное время
+"dht_tests" end time: Jun 10 08:20 Астраханское стандартное время
 "dht_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/16 Testing: onion_tests
-3/16 Test: onion_tests
+3/17 Testing: onion_tests
+3/17 Test: onion_tests
 Command: "C:/mcp-test/aeromesh/build/core/tests/Release/aeromesh_onion_tests.exe"
 Directory: C:/mcp-test/aeromesh/build/core/tests
-"onion_tests" start time: Jun 08 03:44 Астраханское стандартное время
+"onion_tests" start time: Jun 10 08:20 Астраханское стандартное время
 Output:
 ----------------------------------------------------------
 three-hop onion
@@ -114,15 +114,15 @@ ALL TESTS PASSED
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"onion_tests" end time: Jun 08 03:44 Астраханское стандартное время
+"onion_tests" end time: Jun 10 08:20 Астраханское стандартное время
 "onion_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/16 Testing: cover_tests
-4/16 Test: cover_tests
+4/17 Testing: cover_tests
+4/17 Test: cover_tests
 Command: "C:/mcp-test/aeromesh/build/core/tests/Release/aeromesh_cover_tests.exe"
 Directory: C:/mcp-test/aeromesh/build/core/tests
-"cover_tests" start time: Jun 08 03:44 Астраханское стандартное время
+"cover_tests" start time: Jun 10 08:20 Астраханское стандартное время
 Output:
 ----------------------------------------------------------
 fixed cadence when min == max
@@ -168,15 +168,15 @@ ALL TESTS PASSED
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"cover_tests" end time: Jun 08 03:44 Астраханское стандартное время
+"cover_tests" end time: Jun 10 08:20 Астраханское стандартное время
 "cover_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-5/16 Testing: ratchet_tests
-5/16 Test: ratchet_tests
+5/17 Testing: ratchet_tests
+5/17 Test: ratchet_tests
 Command: "C:/mcp-test/aeromesh/build/core/tests/Release/aeromesh_ratchet_tests.exe"
 Directory: C:/mcp-test/aeromesh/build/core/tests
-"ratchet_tests" start time: Jun 08 03:44 Астраханское стандартное время
+"ratchet_tests" start time: Jun 10 08:20 Астраханское стандартное время
 Output:
 ----------------------------------------------------------
 basic A->B round trip
@@ -217,15 +217,15 @@ ALL TESTS PASSED
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"ratchet_tests" end time: Jun 08 03:44 Астраханское стандартное время
+"ratchet_tests" end time: Jun 10 08:20 Астраханское стандартное время
 "ratchet_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-6/16 Testing: pq_tests
-6/16 Test: pq_tests
+6/17 Testing: pq_tests
+6/17 Test: pq_tests
 Command: "C:/mcp-test/aeromesh/build/core/tests/Release/aeromesh_pq_tests.exe"
 Directory: C:/mcp-test/aeromesh/build/core/tests
-"pq_tests" start time: Jun 08 03:44 Астраханское стандартное время
+"pq_tests" start time: Jun 10 08:20 Астраханское стандартное время
 Output:
 ----------------------------------------------------------
 suite reporting (PQ ON)
@@ -251,15 +251,15 @@ ALL TESTS PASSED
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"pq_tests" end time: Jun 08 03:44 Астраханское стандартное время
+"pq_tests" end time: Jun 10 08:20 Астраханское стандартное время
 "pq_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-7/16 Testing: rs_tests
-7/16 Test: rs_tests
+7/17 Testing: rs_tests
+7/17 Test: rs_tests
 Command: "C:/mcp-test/aeromesh/build/core/tests/Release/aeromesh_rs_tests.exe"
 Directory: C:/mcp-test/aeromesh/build/core/tests
-"rs_tests" start time: Jun 08 03:44 Астраханское стандартное время
+"rs_tests" start time: Jun 10 08:20 Астраханское стандартное время
 Output:
 ----------------------------------------------------------
 systematic layout
@@ -299,15 +299,15 @@ ALL TESTS PASSED
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"rs_tests" end time: Jun 08 03:44 Астраханское стандартное время
+"rs_tests" end time: Jun 10 08:20 Астраханское стандартное время
 "rs_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-8/16 Testing: file_tests
-8/16 Test: file_tests
+8/17 Testing: file_tests
+8/17 Test: file_tests
 Command: "C:/mcp-test/aeromesh/build/core/tests/Release/aeromesh_file_tests.exe"
 Directory: C:/mcp-test/aeromesh/build/core/tests
-"file_tests" start time: Jun 08 03:44 Астраханское стандартное время
+"file_tests" start time: Jun 10 08:20 Астраханское стандартное время
 Output:
 ----------------------------------------------------------
 round trip, all chunks present
@@ -341,15 +341,15 @@ ALL TESTS PASSED
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"file_tests" end time: Jun 08 03:44 Астраханское стандартное время
+"file_tests" end time: Jun 10 08:20 Астраханское стандартное время
 "file_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-9/16 Testing: ephemeral_tests
-9/16 Test: ephemeral_tests
+9/17 Testing: ephemeral_tests
+9/17 Test: ephemeral_tests
 Command: "C:/mcp-test/aeromesh/build/core/tests/Release/aeromesh_ephemeral_tests.exe"
 Directory: C:/mcp-test/aeromesh/build/core/tests
-"ephemeral_tests" start time: Jun 08 03:44 Астраханское стандартное время
+"ephemeral_tests" start time: Jun 10 08:20 Астраханское стандартное время
 Output:
 ----------------------------------------------------------
 put / get / contains
@@ -389,15 +389,15 @@ ALL TESTS PASSED
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"ephemeral_tests" end time: Jun 08 03:44 Астраханское стандартное время
+"ephemeral_tests" end time: Jun 10 08:20 Астраханское стандартное время
 "ephemeral_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-10/16 Testing: transport_tests
-10/16 Test: transport_tests
+10/17 Testing: transport_tests
+10/17 Test: transport_tests
 Command: "C:/mcp-test/aeromesh/build/core/tests/Release/aeromesh_transport_tests.exe"
 Directory: C:/mcp-test/aeromesh/build/core/tests
-"transport_tests" start time: Jun 08 03:44 Астраханское стандартное время
+"transport_tests" start time: Jun 10 08:20 Астраханское стандартное время
 Output:
 ----------------------------------------------------------
 constant-rate cover traffic
@@ -433,15 +433,15 @@ ALL TESTS PASSED
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"transport_tests" end time: Jun 08 03:44 Астраханское стандартное время
+"transport_tests" end time: Jun 10 08:20 Астраханское стандартное время
 "transport_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-11/16 Testing: session_tests
-11/16 Test: session_tests
+11/17 Testing: session_tests
+11/17 Test: session_tests
 Command: "C:/mcp-test/aeromesh/build/core/tests/Release/aeromesh_session_tests.exe"
 Directory: C:/mcp-test/aeromesh/build/core/tests
-"session_tests" start time: Jun 08 03:44 Астраханское стандартное время
+"session_tests" start time: Jun 10 08:20 Астраханское стандартное время
 Output:
 ----------------------------------------------------------
 [ ok ] generate two identities
@@ -464,15 +464,15 @@ All secure session tests passed.
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"session_tests" end time: Jun 08 03:44 Астраханское стандартное время
+"session_tests" end time: Jun 10 08:20 Астраханское стандартное время
 "session_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-12/16 Testing: stun_tests
-12/16 Test: stun_tests
+12/17 Testing: stun_tests
+12/17 Test: stun_tests
 Command: "C:/mcp-test/aeromesh/build/core/tests/Release/aeromesh_stun_tests.exe"
 Directory: C:/mcp-test/aeromesh/build/core/tests
-"stun_tests" start time: Jun 08 03:44 Астраханское стандартное время
+"stun_tests" start time: Jun 10 08:20 Астраханское стандартное время
 Output:
 ----------------------------------------------------------
 [ ok ] request type is Binding request 0x0001
@@ -498,15 +498,15 @@ all STUN tests passed
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"stun_tests" end time: Jun 08 03:44 Астраханское стандартное время
+"stun_tests" end time: Jun 10 08:20 Астраханское стандартное время
 "stun_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-13/16 Testing: holepunch_tests
-13/16 Test: holepunch_tests
+13/17 Testing: holepunch_tests
+13/17 Test: holepunch_tests
 Command: "C:/mcp-test/aeromesh/build/core/tests/Release/aeromesh_holepunch_tests.exe"
 Directory: C:/mcp-test/aeromesh/build/core/tests
-"holepunch_tests" start time: Jun 08 03:44 Астраханское стандартное время
+"holepunch_tests" start time: Jun 10 08:20 Астраханское стандартное время
 Output:
 ----------------------------------------------------------
 [ ok ] probe packet is the expected length
@@ -536,15 +536,15 @@ all hole-punch tests passed
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"holepunch_tests" end time: Jun 08 03:44 Астраханское стандартное время
+"holepunch_tests" end time: Jun 10 08:20 Астраханское стандартное время
 "holepunch_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-14/16 Testing: relay_tests
-14/16 Test: relay_tests
+14/17 Testing: relay_tests
+14/17 Test: relay_tests
 Command: "C:/mcp-test/aeromesh/build/core/tests/Release/aeromesh_relay_tests.exe"
 Directory: C:/mcp-test/aeromesh/build/core/tests
-"relay_tests" start time: Jun 08 03:44 Астраханское стандартное время
+"relay_tests" start time: Jun 10 08:20 Астраханское стандартное время
 Output:
 ----------------------------------------------------------
 [ ok ] bind decodes with session
@@ -570,15 +570,15 @@ all relay tests passed
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"relay_tests" end time: Jun 08 03:44 Астраханское стандартное время
+"relay_tests" end time: Jun 10 08:20 Астраханское стандартное время
 "relay_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-15/16 Testing: link_tests
-15/16 Test: link_tests
+15/17 Testing: link_tests
+15/17 Test: link_tests
 Command: "C:/mcp-test/aeromesh/build/core/tests/Release/aeromesh_link_tests.exe"
 Directory: C:/mcp-test/aeromesh/build/core/tests
-"link_tests" start time: Jun 08 03:44 Астраханское стандартное время
+"link_tests" start time: Jun 10 08:20 Астраханское стандартное время
 Output:
 ----------------------------------------------------------
 [ ok ] identities generated
@@ -614,15 +614,58 @@ Output:
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"link_tests" end time: Jun 08 03:44 Астраханское стандартное время
+"link_tests" end time: Jun 10 08:20 Астраханское стандартное время
 "link_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-16/16 Testing: udp_tests
-16/16 Test: udp_tests
+16/17 Testing: vault_tests
+16/17 Test: vault_tests
+Command: "C:/mcp-test/aeromesh/build/core/tests/Release/aeromesh_vault_tests.exe"
+Directory: C:/mcp-test/aeromesh/build/core/tests
+"vault_tests" start time: Jun 10 08:20 Астраханское стандартное время
+Output:
+----------------------------------------------------------
+[ ok ] seal succeeds with a strong password
+[ ok ] open succeeds with the correct password
+[ ok ] recovered secret matches the original
+[ ok ] seal succeeds
+[ ok ] open with wrong password is rejected
+[ ok ] seal rejects a password shorter than the minimum
+[ ok ] seal succeeds
+[ ok ] tampered ciphertext fails authentication
+[ ok ] seal succeeds
+[ ok ] blob with bad magic is rejected as corrupt
+[ ok ] truncated blob is rejected as corrupt
+[ ok ] two seals succeed
+[ ok ] sealing the same secret twice yields different blobs (random salt/nonce)
+[ ok ] identity generated
+[ ok ] real identity secret sealed
+[ ok ] identity secret recovered, so the identity can be restored
+[ ok ] deriveKey succeeds with a strong password
+[ ok ] sealWithKey succeeds
+[ ok ] saltOf recovers the salt embedded in the blob
+[ ok ] openWithKey recovers the secret with the cached key
+[ ok ] deriveKey produces a key
+[ ok ] deriveKeyWithSalt reproduces the same key for the same salt
+[ ok ] a different password yields a different key for the same salt
+[ ok ] two keys derived
+[ ok ] sealWithKey succeeds
+[ ok ] openWithKey with the wrong key is rejected
+[ ok ] deriveKey succeeds
+[ ok ] wipe zeroes the key bytes
+<end of output>
+Test time =  37.39 sec
+----------------------------------------------------------
+Test Passed.
+"vault_tests" end time: Jun 10 08:20 Астраханское стандартное время
+"vault_tests" time elapsed: 00:00:37
+----------------------------------------------------------
+
+17/17 Testing: udp_tests
+17/17 Test: udp_tests
 Command: "C:/mcp-test/aeromesh/build/platform/tests/Release/aeromesh_udp_tests.exe"
 Directory: C:/mcp-test/aeromesh/build/platform/tests
-"udp_tests" start time: Jun 08 03:44 Астраханское стандартное время
+"udp_tests" start time: Jun 10 08:20 Астраханское стандартное время
 Output:
 ----------------------------------------------------------
 [ ok ] bind socket A on loopback
@@ -640,8 +683,8 @@ All UDP socket tests passed.
 Test time =   0.02 sec
 ----------------------------------------------------------
 Test Passed.
-"udp_tests" end time: Jun 08 03:44 Астраханское стандартное время
+"udp_tests" end time: Jun 10 08:20 Астраханское стандартное время
 "udp_tests" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jun 08 03:44 Астраханское стандартное время
+End testing: Jun 10 08:20 Астраханское стандартное время

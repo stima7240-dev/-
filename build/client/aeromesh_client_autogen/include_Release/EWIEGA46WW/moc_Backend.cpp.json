@@ -2,14 +2,98 @@
     "classes": [
         {
             "className": "Backend",
-            "lineNumber": 23,
+            "lineNumber": 54,
             "methods": [
                 {
                     "access": "public",
-                    "index": 1,
-                    "lineNumber": 45,
-                    "name": "regenerateIdentity",
+                    "arguments": [
+                        {
+                            "name": "name",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "password",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "lineNumber": 119,
+                    "name": "createAccount",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "password",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "lineNumber": 166,
+                    "name": "unlock",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 5,
+                    "lineNumber": 221,
+                    "name": "switchAccount",
                     "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 6,
+                    "lineNumber": 233,
+                    "name": "lock",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "name",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 7,
+                    "lineNumber": 247,
+                    "name": "renameAccount",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "index": 8,
+                    "lineNumber": 270,
+                    "name": "deleteAccount",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "index": 9,
+                    "lineNumber": 296,
+                    "name": "regenerateIdentity",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "share",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 10,
+                    "isConst": true,
+                    "lineNumber": 328,
+                    "name": "inspectShare",
+                    "returnType": "QVariantMap"
                 }
             ],
             "object": true,
@@ -19,9 +103,26 @@
                     "designable": true,
                     "final": false,
                     "index": 0,
-                    "lineNumber": 25,
+                    "lineNumber": 56,
+                    "name": "accountState",
+                    "notify": "stateChanged",
+                    "override": false,
+                    "read": "accountState",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "lineNumber": 57,
                     "name": "ready",
-                    "notify": "identityChanged",
+                    "notify": "stateChanged",
                     "override": false,
                     "read": "ready",
                     "required": false,
@@ -35,8 +136,59 @@
                     "constant": false,
                     "designable": true,
                     "final": false,
-                    "index": 1,
-                    "lineNumber": 26,
+                    "index": 2,
+                    "lineNumber": 58,
+                    "name": "hasAccount",
+                    "notify": "stateChanged",
+                    "override": false,
+                    "read": "hasAccount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "lineNumber": 59,
+                    "name": "lastError",
+                    "notify": "stateChanged",
+                    "override": false,
+                    "read": "lastError",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "lineNumber": 60,
+                    "name": "accountName",
+                    "notify": "identityChanged",
+                    "override": false,
+                    "read": "accountName",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "lineNumber": 61,
                     "name": "fingerprint",
                     "notify": "identityChanged",
                     "override": false,
@@ -52,8 +204,8 @@
                     "constant": false,
                     "designable": true,
                     "final": false,
-                    "index": 2,
-                    "lineNumber": 27,
+                    "index": 6,
+                    "lineNumber": 62,
                     "name": "nodeId",
                     "notify": "identityChanged",
                     "override": false,
@@ -69,8 +221,8 @@
                     "constant": false,
                     "designable": true,
                     "final": false,
-                    "index": 3,
-                    "lineNumber": 28,
+                    "index": 7,
+                    "lineNumber": 63,
                     "name": "shareString",
                     "notify": "identityChanged",
                     "override": false,
@@ -81,6 +233,23 @@
                     "type": "QString",
                     "user": false,
                     "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 8,
+                    "lineNumber": 64,
+                    "name": "accounts",
+                    "notify": "accountsChanged",
+                    "override": false,
+                    "read": "accounts",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false,
+                    "virtual": false
                 }
             ],
             "qualifiedClassName": "Backend",
@@ -88,8 +257,22 @@
                 {
                     "access": "public",
                     "index": 0,
-                    "lineNumber": 56,
+                    "lineNumber": 347,
+                    "name": "stateChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "lineNumber": 348,
                     "name": "identityChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 2,
+                    "lineNumber": 349,
+                    "name": "accountsChanged",
                     "returnType": "void"
                 }
             ],

@@ -275,6 +275,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{A18DF832-1384-39C1-AB0B-423EED015550}</Project>
       <Name>aeromesh_core</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\mcp-test\aeromesh\build\platform\aeromesh_platform.vcxproj">
+      <Project>{E1BCAB2E-1D00-3733-A2BC-012B374B05D9}</Project>
+      <Name>aeromesh_platform</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\mcp-test\aeromesh\build\generate_qmlls_build_ini_file.vcxproj">
       <Project>{73F28D8E-2CED-36E7-89C0-D61E099405F6}</Project>
       <Name>generate_qmlls_build_ini_file</Name>

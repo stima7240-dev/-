@@ -310,6 +310,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="C:\mcp-test\aeromesh\core\src\packet.cpp" />
     <ClCompile Include="C:\mcp-test\aeromesh\core\src\identity.cpp" />
+    <ClCompile Include="C:\mcp-test\aeromesh\core\src\account_vault.cpp" />
     <ClCompile Include="C:\mcp-test\aeromesh\core\src\node_id.cpp" />
     <ClCompile Include="C:\mcp-test\aeromesh\core\src\routing_table.cpp" />
     <ClCompile Include="C:\mcp-test\aeromesh\core\src\kademlia.cpp" />

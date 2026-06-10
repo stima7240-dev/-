@@ -6,11 +6,9 @@ C:/mcp-test/aeromesh/build/client/aeromesh_client_autogen/include_Release/EWIEGA
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_memory.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_search.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_stdio_config.h \
-  C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_wctype.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_wstdio.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_wstdlib.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/corecrt_wstring.h \
-  C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/ctype.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/errno.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/stddef.h \
   C:/Program\ Files\ (x86)/Windows\ Kits/10/Include/10.0.26100.0/ucrt/stdio.h \
@@ -19,6 +17,7 @@ C:/mcp-test/aeromesh/build/client/aeromesh_client_autogen/include_Release/EWIEGA
   C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/algorithm \
   C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/array \
   C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/atomic \
+  C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/cassert \
   C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/chrono \
   C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/climits \
   C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/cmath \
@@ -29,6 +28,7 @@ C:/mcp-test/aeromesh/build/client/aeromesh_client_autogen/include_Release/EWIEGA
   C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/cstdlib \
   C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/cstring \
   C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/expected \
+  C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/filesystem \
   C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/functional \
   C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/initializer_list \
   C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/iterator \
@@ -60,12 +60,25 @@ C:/mcp-test/aeromesh/build/client/aeromesh_client_autogen/include_Release/EWIEGA
   C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/version \
   C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/yvals.h \
   C:/Program\ Files/Microsoft\ Visual\ Studio/18/Community/VC/Tools/MSVC/14.50.35717/include/yvals_core.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/QByteArray \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/QDir \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/QFile \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/QFileInfo \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/QList \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/QMap \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/QObject \
-  C:/Qt/6.11.1/msvc2022_64/include/QtCore/QSettings \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/QSaveFile \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/QStandardPaths \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/QString \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/QStringList \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/QUuid \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/QVariant \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/QVariantList \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/QVariantMap \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/q17memory.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/q20bit.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/q20functional.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/q20iterator.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/q20memory.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/q20type_traits.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/q20utility.h \
@@ -86,6 +99,7 @@ C:/mcp-test/aeromesh/build/client/aeromesh_client_autogen/include_Release/EWIEGA
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qbytearrayalgorithms.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qbytearraylist.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qbytearrayview.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qcalendar.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qchar.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qcompare.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qcompare_impl.h \
@@ -99,8 +113,15 @@ C:/mcp-test/aeromesh/build/client/aeromesh_client_autogen/include_Release/EWIEGA
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qcontiguouscache.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qdarwinhelpers.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qdatastream.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qdatetime.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qdebug.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qdir.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qdirlisting.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qendian.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qexceptionhandling.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qfile.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qfiledevice.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qfileinfo.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qflags.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qfloat16.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qforeach.h \
@@ -111,11 +132,13 @@ C:/mcp-test/aeromesh/build/client/aeromesh_client_autogen/include_Release/EWIEGA
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qglobalstatic.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qhash.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qhashfunctions.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qiodevice.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qiodevicebase.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qiterable.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qiterator.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qlatin1stringview.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qlist.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qlocale.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qlogging.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qmalloc.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qmap.h \
@@ -133,14 +156,16 @@ C:/mcp-test/aeromesh/build/client/aeromesh_client_autogen/include_Release/EWIEGA
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qpair.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qprocessordetection.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qrefcount.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qsavefile.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qscopedpointer.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qscopeguard.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qset.h \
-  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qsettings.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qshareddata.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qshareddata_impl.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qsharedpointer.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qsharedpointer_impl.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qspan.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qstandardpaths.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qstdlibdetection.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qstring.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qstringalgorithms.h \
@@ -167,6 +192,7 @@ C:/mcp-test/aeromesh/build/client/aeromesh_client_autogen/include_Release/EWIEGA
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qtenvironmentvariables.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qtextstream.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qtformat_impl.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qtimezone.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qtmetamacros.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qtnoop.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qtpreprocessorsupport.h \
@@ -178,10 +204,14 @@ C:/mcp-test/aeromesh/build/client/aeromesh_client_autogen/include_Release/EWIEGA
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qtypeinfo.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qtypes.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qutf8stringview.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/quuid.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qvariant.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qvariantlist.h \
+  C:/Qt/6.11.1/msvc2022_64/include/QtCore/qvariantmap.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qvarlengtharray.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.11.1/msvc2022_64/include/QtCore/qyieldcpu.h \
+  C:/mcp-test/aeromesh/core/include/aeromesh/account_vault.hpp \
   C:/mcp-test/aeromesh/core/include/aeromesh/identity.hpp \
   C:/mcp-test/aeromesh/core/include/aeromesh/node_id.hpp

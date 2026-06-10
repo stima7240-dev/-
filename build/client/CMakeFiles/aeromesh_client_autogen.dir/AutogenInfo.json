@@ -1171,6 +1171,30 @@
 			"MU",
 			"EWIEGA46WW/moc_Backend.cpp",
 			null
+		],
+		[
+			"C:/mcp-test/aeromesh/client/ChatService.h",
+			"MU",
+			"EWIEGA46WW/moc_ChatService.cpp",
+			null
+		],
+		[
+			"C:/mcp-test/aeromesh/client/DhtService.h",
+			"MU",
+			"EWIEGA46WW/moc_DhtService.cpp",
+			null
+		],
+		[
+			"C:/mcp-test/aeromesh/client/NetworkEngine.h",
+			"MU",
+			"EWIEGA46WW/moc_NetworkEngine.cpp",
+			null
+		],
+		[
+			"C:/mcp-test/aeromesh/client/WinFrame.h",
+			"MU",
+			"EWIEGA46WW/moc_WinFrame.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -1279,6 +1303,7 @@
 		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/include",
 		"C:/mcp-test/aeromesh/build/_deps/sodium-src/libsodium/src/libsodium/include",
 		"C:/mcp-test/aeromesh/build/_deps/liboqs-src/src",
+		"C:/mcp-test/aeromesh/platform/include",
 		"C:/Qt/6.11.1/msvc2022_64/include/QtQml",
 		"C:/Qt/6.11.1/msvc2022_64/include",
 		"C:/Qt/6.11.1/msvc2022_64/include/QtCore",
@@ -1297,6 +1322,7 @@
 		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/include",
 		"C:/mcp-test/aeromesh/build/_deps/sodium-src/libsodium/src/libsodium/include",
 		"C:/mcp-test/aeromesh/build/_deps/liboqs-src/src",
+		"C:/mcp-test/aeromesh/platform/include",
 		"C:/Qt/6.11.1/msvc2022_64/include/QtQml",
 		"C:/Qt/6.11.1/msvc2022_64/include",
 		"C:/Qt/6.11.1/msvc2022_64/include/QtCore",
@@ -1315,6 +1341,7 @@
 		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/include",
 		"C:/mcp-test/aeromesh/build/_deps/sodium-src/libsodium/src/libsodium/include",
 		"C:/mcp-test/aeromesh/build/_deps/liboqs-src/src",
+		"C:/mcp-test/aeromesh/platform/include",
 		"C:/Qt/6.11.1/msvc2022_64/include/QtQml",
 		"C:/Qt/6.11.1/msvc2022_64/include",
 		"C:/Qt/6.11.1/msvc2022_64/include/QtCore",
@@ -1333,6 +1360,7 @@
 		"C:/mcp-test/aeromesh/build/_deps/liboqs-build/include",
 		"C:/mcp-test/aeromesh/build/_deps/sodium-src/libsodium/src/libsodium/include",
 		"C:/mcp-test/aeromesh/build/_deps/liboqs-src/src",
+		"C:/mcp-test/aeromesh/platform/include",
 		"C:/Qt/6.11.1/msvc2022_64/include/QtQml",
 		"C:/Qt/6.11.1/msvc2022_64/include",
 		"C:/Qt/6.11.1/msvc2022_64/include/QtCore",

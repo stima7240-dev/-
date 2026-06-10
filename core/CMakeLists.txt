@@ -4,6 +4,7 @@
 add_library(aeromesh_core STATIC
     src/packet.cpp
     src/identity.cpp
+    src/account_vault.cpp
     src/node_id.cpp
     src/routing_table.cpp
     src/kademlia.cpp

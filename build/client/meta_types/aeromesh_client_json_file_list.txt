@@ -1,1 +1,5 @@
 C:/mcp-test/aeromesh/build/client/aeromesh_client_autogen/include_Release/EWIEGA46WW/moc_Backend.cpp.json
+C:/mcp-test/aeromesh/build/client/aeromesh_client_autogen/include_Release/EWIEGA46WW/moc_ChatService.cpp.json
+C:/mcp-test/aeromesh/build/client/aeromesh_client_autogen/include_Release/EWIEGA46WW/moc_DhtService.cpp.json
+C:/mcp-test/aeromesh/build/client/aeromesh_client_autogen/include_Release/EWIEGA46WW/moc_NetworkEngine.cpp.json
+C:/mcp-test/aeromesh/build/client/aeromesh_client_autogen/include_Release/EWIEGA46WW/moc_WinFrame.cpp.json
