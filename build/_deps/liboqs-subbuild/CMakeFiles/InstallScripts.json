@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"C:/mcp-test/aeromesh/build/_deps/liboqs-subbuild/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

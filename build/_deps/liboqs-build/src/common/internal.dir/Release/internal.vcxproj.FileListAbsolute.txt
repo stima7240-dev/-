@@ -1,1 +1,0 @@
-C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\common\internal.dir\Release\internal.lib

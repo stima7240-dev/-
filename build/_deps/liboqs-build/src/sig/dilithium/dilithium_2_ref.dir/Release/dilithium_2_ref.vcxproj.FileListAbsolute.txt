@@ -1,1 +1,0 @@
-C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\dilithium\dilithium_2_ref.dir\Release\dilithium_2_ref.lib

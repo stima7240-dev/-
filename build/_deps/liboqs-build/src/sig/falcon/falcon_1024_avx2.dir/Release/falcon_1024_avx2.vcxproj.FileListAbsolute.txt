@@ -1,1 +1,0 @@
-C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\sig\falcon\falcon_1024_avx2.dir\Release\falcon_1024_avx2.lib

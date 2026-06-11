@@ -1,8 +1,0 @@
-module AeroMesh
-typeinfo aeromesh_client.qmltypes
-prefer :/qt/qml/AeroMesh/
-Main 1.0 Main.qml
-ChatListItem 1.0 ChatListItem.qml
-MessageBubble 1.0 MessageBubble.qml
-depends QtQuick
-

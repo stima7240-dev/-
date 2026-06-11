@@ -1,3 +1,0 @@
-C:/mcp-test/aeromesh/build/_deps/liboqs-subbuild/CMakeFiles/liboqs-populate.dir
-C:/mcp-test/aeromesh/build/_deps/liboqs-subbuild/CMakeFiles/ALL_BUILD.dir
-C:/mcp-test/aeromesh/build/_deps/liboqs-subbuild/CMakeFiles/ZERO_CHECK.dir

@@ -1,1 +1,0 @@
-C:\mcp-test\aeromesh\build\_deps\liboqs-build\src\kem\kyber\kyber_1024_ref.dir\Release\kyber_1024_ref.lib

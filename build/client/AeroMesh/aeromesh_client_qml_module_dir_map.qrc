@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/">
-    <file alias="/qt/qml/AeroMesh">C:/mcp-test/aeromesh/build/client/AeroMesh</file>
-
-  </qresource>
-</RCC>
